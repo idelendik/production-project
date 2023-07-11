@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
+    // allows to work with commonJS modules using 'import' instead of 'require'
+    "esModuleInterop": true,
+
+    // allows to use default imports from packages which don't support it
+    // for example "import React from 'react';" instead of "import * as React from 'react';"
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ]
+}
