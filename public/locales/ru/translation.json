@@ -4,5 +4,6 @@
   "Loading": "Загрузка...",
   "Page not found": "Страница не найдена",
   "An unexpected error has happened": "Произошла непредвиденная ошибка",
-  "Reload the page": "Перезагрузить страницу"
+  "Reload the page": "Перезагрузить страницу",
+  "Login": "Войти"
 }
