@@ -8,11 +8,12 @@ interface KeyboardEvent {
     key: string;
 }
 
-interface ModalProps {
+export interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY_MS = 300;
@@ -22,9 +23,21 @@ export const Modal = ({
     children,
     isOpen,
     onClose,
+    lazy,
 }: ModalProps) => {
+    const [isMounted, setIsMounted] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
+
+    useEffect(() => {
+        if(isOpen) {
+            setIsMounted(true);
+        }
+
+        return () => {
+            setIsMounted(false);
+        }
+    }, [isOpen]);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -60,6 +73,10 @@ export const Modal = ({
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
+    }
+
+    if (lazy && !isMounted) {
+        return null;
     }
 
     return (

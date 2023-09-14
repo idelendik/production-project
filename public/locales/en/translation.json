@@ -5,5 +5,7 @@
   "Page not found": "Page not found",
   "An unexpected error has happened": "Произошла непредвиденная ошибка",
   "Reload the page": "Перезагрузить страницу",
-  "Login": "Log in"
+  "Login": "Log in",
+  "Username": "Username",
+  "Password": "Password"
 }
