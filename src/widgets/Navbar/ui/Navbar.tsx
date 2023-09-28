@@ -5,7 +5,7 @@ import cls from "./Navbar.module.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button";
 import { ButtonTheme } from "shared/ui/Button/ui/Button";
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entities/User";
@@ -15,7 +15,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
@@ -53,4 +53,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
         </div>
     );
-};
+});
+
+// Fix for memo - ESLint: Component definition is missing display name(react/display-name)
+Navbar.displayName = "Navbar";

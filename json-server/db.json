@@ -1,12 +1,12 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "json-server2", "author": "typicode" },
-    { "id": 3, "title": "json-server3", "author": "typicode" },
-    { "id": 4, "title": "json-server4", "author": "typicode" }
+    { "id": "1", "title": "json-server", "author": "typicode" },
+    { "id": "2", "title": "json-server2", "author": "typicode" },
+    { "id": "3", "title": "json-server3", "author": "typicode" },
+    { "id": "4", "title": "json-server4", "author": "typicode" }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    { "id": "1", "body": "some comment", "postId": "1" }
   ],
   "users": [
     {
@@ -15,5 +15,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Igor",
+    "lastname": "D.",
+    "age": 34,
+    "currency": "BYN",
+    "country": "Belarus",
+    "city": "Minsk",
+    "username": "admin",
+    "avatar": "https://cdn1.vectorstock.com/i/1000x1000/94/65/bald-man-avatar-icon-vector-6759465.jpg"
+  }
 }

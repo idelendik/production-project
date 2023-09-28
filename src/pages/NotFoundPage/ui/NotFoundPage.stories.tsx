@@ -6,7 +6,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { NotFoundPage } from "./NotFoundPage";
 
 export default {
-    title: "pages/AboutPage",
+    title: "pages/NotFoundPage",
     component: NotFoundPage,
     argTypes: {
         backgroundColor: { control: "color" },
@@ -16,10 +16,10 @@ export default {
 const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
 
 
-export const Light = Template.bind({});
-Light.args = {};
-Light.decorators = [ThemeDecorator(Theme.LIGHT)];
+export const NotFoundLight = Template.bind({});
+NotFoundLight.args = {};
+NotFoundLight.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const NotFoundDark = Template.bind({});
+NotFoundDark.args = {};
+NotFoundDark.decorators = [ThemeDecorator(Theme.DARK)];
