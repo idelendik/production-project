@@ -5,6 +5,10 @@ module.exports = {
         jest: true
     },
     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:i18next/recommended", "plugin:storybook/recommended", "plugin:storybook/recommended"],
+    globals: {
+        __IS_DEV__: true,
+        __API__: true,
+    },
     overrides: [{
         env: {
             node: true
