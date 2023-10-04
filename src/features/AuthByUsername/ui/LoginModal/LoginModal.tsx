@@ -8,8 +8,8 @@ import { Loader } from "shared/ui/Loader";
 
 interface LoginModalProps {
     className?: string;
-    isOpen?: boolean;
-    onClose?: () => void;
+    isOpen: boolean;
+    onClose: () => void;
 }
 
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {

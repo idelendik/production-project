@@ -44,7 +44,8 @@ export const Input = memo((props: InputProps) => {
     }
 
     const onSelect = (e: MouseEvent<HTMLInputElement>) => {
-        setCaretPosition((e.target as HTMLInputElement)?.selectionStart);
+        console.log((e.target as HTMLInputElement)?.selectionStart);
+        setCaretPosition((e.target as HTMLInputElement)?.selectionStart || caretPosition);
     }
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
