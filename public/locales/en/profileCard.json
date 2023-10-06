@@ -1,6 +1,10 @@
 {
-  "profile": "Profile",
-  "edit": "Edit",
   "your_firstname": "Your first name",
-  "your_lastname": "Your last name"
+  "your_lastname": "Your last name",
+  "your_age": "Your age",
+  "your_city": "Your city",
+  "your_username": "Your username",
+  "your_avatar": "Your avatar",
+  "error_title": "Cannot load the profile due to some error",
+  "error_text": "Try reloading the page"
 }
