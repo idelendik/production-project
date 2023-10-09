@@ -3,7 +3,7 @@ import { Profile } from "entities/Profile";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country/model/types/country";
 
-const defaultProfile: Profile = {
+export const defaultProfile: Profile = {
     firstname: "",
     lastname: "",
     age: -1,

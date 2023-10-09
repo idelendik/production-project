@@ -5,6 +5,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import ProfilePage from "./ProfilePage";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Country } from "entities/Country";
+import AvatarImg from "shared/assets/tests/Avatar.jpg";
+import { Currency } from "entities/Currency";
 
 export default {
     title: "pages/ProfilePage",
@@ -21,12 +24,38 @@ export const ProfileLight = Template.bind({});
 ProfileLight.args = {};
 ProfileLight.decorators = [
     ThemeDecorator(Theme.LIGHT),
-    StoreDecorator({})
+    StoreDecorator({
+        profile: {
+            form: {
+                username: "admin",
+                age: 30,
+                country: Country.India,
+                lastname: "D.",
+                firstname: "Igor",
+                city: "Minsk",
+                avatar: AvatarImg,
+                currency: Currency.CNY
+            }
+        }
+    })
 ];
 
 export const ProfileDark = Template.bind({});
 ProfileDark.args = {};
 ProfileDark.decorators = [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator({})
+    StoreDecorator({
+        profile: {
+            form: {
+                username: "admin",
+                age: 30,
+                country: Country.India,
+                lastname: "D.",
+                firstname: "Igor",
+                city: "Minsk",
+                avatar: AvatarImg,
+                currency: Currency.CNY
+            }
+        }
+    })
 ];
