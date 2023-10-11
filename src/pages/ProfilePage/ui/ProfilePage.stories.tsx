@@ -35,8 +35,8 @@ ProfileLight.decorators = [
                 city: "Minsk",
                 avatar: AvatarImg,
                 currency: Currency.CNY
-            }
-        }
+            },
+        },
     })
 ];
 
@@ -55,7 +55,49 @@ ProfileDark.decorators = [
                 city: "Minsk",
                 avatar: AvatarImg,
                 currency: Currency.CNY
-            }
-        }
+            },
+        },
+    })
+];
+
+export const ProfileLightReadonly = Template.bind({});
+ProfileLightReadonly.args = {};
+ProfileLightReadonly.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        profile: {
+            form: {
+                username: "admin",
+                age: 30,
+                country: Country.India,
+                lastname: "D.",
+                firstname: "Igor",
+                city: "Minsk",
+                avatar: AvatarImg,
+                currency: Currency.CNY
+            },
+            readonly: true,
+        },
+    })
+];
+
+export const ProfileDarkReadonly = Template.bind({});
+ProfileDarkReadonly.args = {};
+ProfileDarkReadonly.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            form: {
+                username: "admin",
+                age: 30,
+                country: Country.India,
+                lastname: "D.",
+                firstname: "Igor",
+                city: "Minsk",
+                avatar: AvatarImg,
+                currency: Currency.CNY
+            },
+            readonly: true,
+        },
     })
 ];
