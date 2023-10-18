@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button";
 import { ButtonTheme } from "shared/ui/Button/ui/Button";
 import { memo } from "react";
-import { FLAG_EN, FLAG_RU } from "shared/const/flags";
+import FlagRU from "shared/assets/icons/flag-ru-icon.svg";
+import FlagUS from "shared/assets/icons/flag-us-icon.svg";
 
 interface LangSwitcherProps {
     className?: string
@@ -21,8 +22,9 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
         <Button
             className={classNames("",{}, [className])}
             theme={ButtonTheme.CLEAR}
-            onClick={changeLangHandler}>
-            {i18n.language === "ru" ? FLAG_EN : FLAG_RU}
+            onClick={changeLangHandler}
+        >
+            {i18n.language === "ru" ? <FlagUS width={30} height={30} /> : <FlagRU width={30} height={30} />}
         </Button>
     );
 });
