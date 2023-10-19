@@ -15,10 +15,12 @@ interface AvatarProps {
 export const Avatar = (props: AvatarProps) => {
     const {
         className,
-        src = DefaultImg,
+        src = "",
         size = 100,
         alt,
     } = props;
+
+    const imageOrDefault = src.length > 0 ? src : DefaultImg;
 
     const mods: Mods = {};
 
@@ -33,7 +35,7 @@ export const Avatar = (props: AvatarProps) => {
         <img
             className={classNames(cls.Avatar, mods, [className])}
             style={styles}
-            src={src}
+            src={imageOrDefault}
             alt={alt}
         />
     );
