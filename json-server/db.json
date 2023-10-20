@@ -29,7 +29,9 @@
       "img": "https://27sysday.ru/wp-content/uploads/2021/05/js_thumb.jpg",
       "views": 1022,
       "createdAt": "25.01.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -84,6 +86,36 @@
       "text": "not sure bout dat",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asd",
+      "id": "XeZXzRs"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asd",
+      "id": "gCnnQpk"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "!!! stop",
+      "id": "m0ZTznt"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1233",
+      "id": "-KGkvtL"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "finally",
+      "id": "rojf3aN"
     }
   ],
   "users": [
@@ -98,18 +130,32 @@
       "id": "2",
       "username": "guest",
       "password": "1233",
-      "role":  "USER",
-      "avatar":  ""
+      "role": "USER",
+      "avatar": ""
     }
   ],
-  "profile": {
-    "firstname": "Igor",
-    "lastname": "D.",
-    "age": 34,
-    "currency": "BYN",
-    "country": "Belarus",
-    "city": "Minsk",
-    "username": "admin",
-    "avatar": "https://cdn1.vectorstock.com/i/1000x1000/94/65/bald-man-avatar-icon-vector-6759465.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Igor",
+      "lastname": "D.",
+      "age": 34,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "admin",
+      "avatar": "https://cdn1.vectorstock.com/i/1000x1000/94/65/bald-man-avatar-icon-vector-6759465.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "MaxSSS",
+      "lastname": "S.",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin1",
+      "avatar": "https://avatars.mds.yandex.net/i?id=32ab00c547e3b2e69591c0fab6ef1973ccde787b-9182360-images-thumbs&n=13"
+    }
+  ]
 }
