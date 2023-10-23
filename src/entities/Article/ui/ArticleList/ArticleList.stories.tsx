@@ -1,33 +1,41 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ArticleDetails } from "./ArticleDetails";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Article, ArticleBlockType, ArticleType } from "entities/Article";
+import { ArticleList } from "./ArticleList";
+import { Article, ArticleView } from "../../model/types/article";
 
 export default {
-    title: "entities/ArticleDetails",
-    component: ArticleDetails,
+    title: "entities/Article/ArticleList",
+    component: ArticleList,
     argTypes: {
         backgroundColor: { control: "color" },
     },
-} as ComponentMeta<typeof ArticleDetails>;
+} as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
-const article: Article = {
+const article = {
     "id": "1",
-    "title": "JS news",
-    "subtitle": "What's new in 2023?",
+    "title": "JS news. What's new in 2023?",
+    "subtitle": "More info...",
     "img": "https://27sysday.ru/wp-content/uploads/2021/05/js_thumb.jpg",
     "views": 1022,
     "createdAt": "25.01.2022",
-    "type": [ArticleType.IT],
-    "user": { "id": "1", "username": "User" },
+    "user": {
+        "id": "1",
+        "username": "User",
+        "avatar": "",
+    },
+    "type": [
+        "IT",
+        "SCI",
+        "ECO",
+        "POLITICS"
+    ],
     "blocks": [
         {
             "id": "1",
-            "type": ArticleBlockType.TEXT,
+            "type": "TEXT",
             "title": "Block heading...",
             "paragraphs": [
                 "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
@@ -37,12 +45,12 @@ const article: Article = {
         },
         {
             "id": "4",
-            "type": ArticleBlockType.CODE,
+            "type": "CODE",
             "code": "var a = 1;\nvar b = 2;"
         },
         {
             "id": "5",
-            "type": ArticleBlockType.TEXT,
+            "type": "TEXT",
             "title": "Block heading1123...",
             "paragraphs": [
                 "Lorem1333.....",
@@ -54,44 +62,40 @@ const article: Article = {
         },
         {
             "id": "2",
-            "type": ArticleBlockType.IMAGE,
+            "type": "IMAGE",
             "src": "https://cs13.pikabu.ru/post_img/2023/06/18/5/og_og_1687073811276818604.jpg",
             "title": "image title aasd"
         },
         {
             "id": "3",
-            "type": ArticleBlockType.CODE,
+            "type": "CODE",
             "code": "var a = 11;\nvar b = 22;"
         }
     ]
-}
+} as Article;
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: article
-        }
-    }),
-]
+export const Big = Template.bind({});
+Big.args = {
+    articles: [article, article],
+    view: ArticleView.BIG
+};
 
-export const IsLoading = Template.bind({});
-IsLoading.args = {};
-IsLoading.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            isLoading: true
-        }
-    }),
-]
+export const Small = Template.bind({});
+Small.args = {
+    articles: [article, article],
+    view: ArticleView.SMALL
+};
 
-export const Error = Template.bind({});
-Error.args = {};
-Error.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            error: "error"
-        }
-    }),
-]
+export const IsLoadingBig = Template.bind({});
+IsLoadingBig.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.BIG
+};
+
+export const IsLoadingSmall = Template.bind({});
+IsLoadingSmall.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.SMALL
+};

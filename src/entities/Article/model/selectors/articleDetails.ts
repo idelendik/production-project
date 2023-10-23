@@ -9,7 +9,8 @@ export const defaultArticleDetails: Article = {
     img: "",
     subtitle: "",
     type: [],
-    createdAt: ""
+    createdAt: "",
+    user: { id: "1", username: "User" }
 }
 
 export const getArticleDetailsData = (state: StateSchema) => state.articleDetails?.data;

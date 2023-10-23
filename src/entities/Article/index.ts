@@ -4,7 +4,7 @@ export {
 
 export { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
 
-export { Article, ArticleType, ArticleBlockType } from "./model/types/article";
+export { Article, ArticleType, ArticleBlockType, ArticleView } from "./model/types/article";
 
 export {
     articleDetailsActions,
@@ -16,3 +16,5 @@ export {
     getArticleDetailsError,
     getArticleDetailsIsLoading
 } from "./model/selectors/articleDetails";
+
+export { ArticleList } from "./ui/ArticleList/ArticleList";

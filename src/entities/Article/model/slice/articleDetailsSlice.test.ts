@@ -11,7 +11,8 @@ const data: Article = {
     views: 0,
     blocks: [],
     type: [],
-    createdAt: ""
+    createdAt: "",
+    user: { id: "1", username: "User" },
 }
 
 describe("articleDetailsSlice.test", () => {
