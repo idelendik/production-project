@@ -1,0 +1,13 @@
+.ArticleViewSelector {
+    /* --- */
+    display: flex;
+    gap: 8px;
+}
+
+.selected {
+    pointer-events: none;
+}
+
+.icon {
+    width: 20px;
+}

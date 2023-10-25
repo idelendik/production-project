@@ -31,6 +31,162 @@
       "createdAt": "25.01.2022",
       "userId": "1",
       "type": [
+        "IT", "JS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "var a = 1;\nvar b = 2;"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Block heading1123...",
+          "paragraphs": [
+            "Lorem1333.....",
+            "Lorem ipsum....",
+            "3rd paragraph",
+            "Lorem ipsumasd....",
+            "333rd paragraph"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://cs13.pikabu.ru/post_img/2023/06/18/5/og_og_1687073811276818604.jpg",
+          "title": "image title aasd"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "var a = 11;\nvar b = 22;"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "JS news copy",
+      "subtitle": "What's new in 2023?",
+      "img": "https://www.pngkey.com/png/detail/550-5509803_js-logo-javascript-logo-circle-png.png",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "PROGRAMMING", "SKILLS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "var a = 1;\nvar b = 2;"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Block heading1123...",
+          "paragraphs": [
+            "Lorem1333.....",
+            "Lorem ipsum....",
+            "3rd paragraph",
+            "Lorem ipsumasd....",
+            "333rd paragraph"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://cs13.pikabu.ru/post_img/2023/06/18/5/og_og_1687073811276818604.jpg",
+          "title": "image title aasd"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "var a = 11;\nvar b = 22;"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "JS news LAtEST",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_1280.png",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT", "PRO"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "var a = 1;\nvar b = 2;"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Block heading1123...",
+          "paragraphs": [
+            "Lorem1333.....",
+            "Lorem ipsum....",
+            "3rd paragraph",
+            "Lorem ipsumasd....",
+            "333rd paragraph"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://cs13.pikabu.ru/post_img/2023/06/18/5/og_og_1687073811276818604.jpg",
+          "title": "image title aasd"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "var a = 11;\nvar b = 22;"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "JS news new news",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2013/08/28/12/03/plumage-176723_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
         "IT"
       ],
       "blocks": [
@@ -73,12 +229,372 @@
           "code": "var a = 11;\nvar b = 22;"
         }
       ]
+    },
+    {
+      "id": "5",
+      "title": "Rainbow",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/10/15/01/23/abstract-8315974_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "NATURE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Mosaic",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2018/05/12/19/20/mosaic-3394375_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Abstraction",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/10/08/17/04/swirls-8302543_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "NATURE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Piano",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2022/07/05/18/31/piano-7303732_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Art. Mountains",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/09/30/21/16/river-8286407_1280.png",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Doge",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/09/19/12/34/dog-8262506_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "SPACE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Travelling!",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/09/15/04/05/sea-8254024_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "NATURE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Yoga for everybody",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/08/30/09/44/woman-8222956_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "ART", "SPACE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Cat owners among us",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/09/07/14/26/cat-8239223_1280.png",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT", "NATURE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Collect harvest in time",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/08/15/14/13/harvest-8192037_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "The most beautiful bridges",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/05/16/14/07/bridge-7997690_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "ART"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Be closer to the nature",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/07/13/16/32/woman-8125246_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT", "NATURE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Political digest",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/09/01/18/02/eyeglasses-8227429_1280.jpg",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Plans for the weekend",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/08/25/02/01/reader-8211917_1280.png",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "NATURE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Mountains again",
+      "subtitle": "What's new in 2023?",
+      "img": "https://cdn.pixabay.com/photo/2023/09/09/10/25/mountains-8242910_1280.png",
+      "views": 1022,
+      "createdAt": "25.01.2022",
+      "userId": "1",
+      "type": [
+        "IT", "ART"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block heading...",
+          "paragraphs": [
+            "This section is dedicated to the JavaScript language itself, and not the parts that are specific to Web pages or other host environments. For information about APIs that are specific to Web pages, please see Web APIs and DOM.",
+            "The standards for JavaScript are the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API specification (ECMA-402). As soon as one browser implements a feature, we try to document it. This means that cases where some proposals for new ECMAScript features have already been implemented in browsers, documentation and examples in MDN articles may use some of those new features. Most of the time, this happens between the stages 3 and 4, and is usually before the spec is officially published.",
+            "Do not confuse JavaScript with the Java programming language — JavaScript is not \"Interpreted Java\". Both \"Java\" and \"JavaScript\" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages have very different syntax, semantics, and use."
+          ]
+        }
+      ]
     }
   ],
   "comments": [
     {
-      "id": "1",
-      "text": "JS rulezzz!",
+      "id": "4",
+      "text": "JS? Meh!",
       "articleId": "1",
       "userId": "1"
     },

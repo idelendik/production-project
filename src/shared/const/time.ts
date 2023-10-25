@@ -1,0 +1,1 @@
+export const FAKE_DELAY_MS = 400;

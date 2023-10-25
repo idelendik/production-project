@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import { FAKE_DELAY_MS } from "shared/const/time";
 
 // export const AboutPageAsync = lazy(() => new Promise(resolve => {
 //     setTimeout(() => {
@@ -7,6 +8,6 @@ import { lazy } from "react";
 // }));
 
 export const AboutPageAsync = lazy(async () => {
-    await new Promise(resolve => setTimeout(resolve, 1100));
+    await new Promise(resolve => setTimeout(resolve, FAKE_DELAY_MS));
     return import("./AboutPage");
 });

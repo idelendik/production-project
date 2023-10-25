@@ -3,14 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 
 import cls from "./ArticleListItem.module.scss"
 import { ArticleView } from "../../model/types/article";
-import { Text } from "shared/ui/Text/Text";
-import { Icon } from "shared/ui/Icon/Icon";
-import ViewsIcon from "shared/assets/icons/views-icon.svg";
 import { Card } from "shared/ui/Card/Card";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Button } from "shared/ui/Button";
-import { ButtonTheme } from "shared/ui/Button/ui/Button";
-import { ArticleTextBlockComponent } from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 interface ArticleListItemSkeletonProps {
