@@ -6,7 +6,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { ArticleView } from "entities/Article";
 
 export default {
-    title: "pages/ArticlesPage",
+    title: "pages/ArticlesPage/ArticlesPage",
     component: ArticlesPage,
     argTypes: {
         backgroundColor: { control: "color" },
