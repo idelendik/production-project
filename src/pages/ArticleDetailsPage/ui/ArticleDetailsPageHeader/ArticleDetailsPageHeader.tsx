@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ButtonTheme } from "shared/ui/Button/ui/Button";
 import { useSelector } from "react-redux";
-import { getCanEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
+import { getCanEditArticle } from "../../model/selectors/article";
 import { getArticleDetailsData } from "entities/Article";
 
 interface ArticleDetailsPageHeaderProps {

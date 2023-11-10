@@ -1,5 +1,5 @@
 import { StateSchema } from "app/providers/StoreProvider";
-import { Profile } from "entities/Profile";
+import { Profile } from "../../types/profile";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country/model/types/country";
 

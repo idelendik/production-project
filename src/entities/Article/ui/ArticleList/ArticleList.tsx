@@ -1,14 +1,14 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 
 import cls from "./ArticleList.module.scss"
-import {Article, ArticleView} from "../../model/types/article";
-import {ArticleListItem} from "../../ui/ArticleListItem/ArticleListItem";
-import {ArticleListItemSkeleton} from "../ArticleListItem/AtricleListItemSkeleton";
-import {useTranslation} from "react-i18next";
-import {Text, TextSize} from "shared/ui/Text/Text";
-import {HTMLAttributeAnchorTarget} from "react";
-import {List, ListRowProps, WindowScroller} from "react-virtualized";
-import {PAGE_ID} from "widgets/Page/Page";
+import { Article, ArticleView } from "../../model/types/article";
+import { ArticleListItem } from "../../ui/ArticleListItem/ArticleListItem";
+import { ArticleListItemSkeleton } from "../ArticleListItem/AtricleListItemSkeleton";
+import { useTranslation } from "react-i18next";
+import { Text, TextSize } from "shared/ui/Text/Text";
+import { HTMLAttributeAnchorTarget } from "react";
+import { List, ListRowProps, WindowScroller } from "react-virtualized";
+import { PAGE_ID } from "widgets/Page/Page";
 
 interface ArticleListProps {
     className?: string;
@@ -37,7 +37,7 @@ export const ArticleList = (props: ArticleListProps) => {
     const itemsPerRow = isBig ? 1 : 3;
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
-    const rowRenderer = ({index, key, style}: ListRowProps) => {
+    const rowRenderer = ({ index, key, style }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
         const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);

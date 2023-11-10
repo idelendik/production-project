@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { fetchArticleById } from "./fetchArticleById";
-import { defaultArticleDetails } from "entities/Article/model/selectors/articleDetails";
+import { defaultArticleDetails } from "../../../model/selectors/articleDetails";
 
 describe("fetchArticleById.test", () => {
     test("successful", async () => {

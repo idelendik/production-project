@@ -4,7 +4,14 @@ module.exports = {
         es2021: true,
         jest: true
     },
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:i18next/recommended", "plugin:storybook/recommended", "plugin:storybook/recommended"],
+    extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:i18next/recommended",
+        "plugin:storybook/recommended",
+        "plugin:storybook/recommended",
+    ],
     globals: {
         __IS_DEV__: true,
         __API__: true,
@@ -24,7 +31,13 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module"
     },
-    plugins: ["@typescript-eslint", "react", "i18next", "react-hooks"],
+    plugins: [
+        "@typescript-eslint",
+        "react",
+        "i18next",
+        "react-hooks",
+        "idelendik-eslint"
+    ],
     rules: {
         indent: ["error", 4],
         "linebreak-style": ["error", "unix"],
@@ -43,5 +56,6 @@ module.exports = {
         }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
+        "idelendik-eslint/fsd-imports-checker": "error",
     }
 };
