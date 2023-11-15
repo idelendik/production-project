@@ -30,6 +30,20 @@ RegularDark.args = {
 RegularDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 
+export const RegularS = Template.bind({});
+RegularS.args = {
+    title: "Title",
+    text: "Text",
+    size: TextSize.S,
+};
+
+export const RegularM = Template.bind({});
+RegularM.args = {
+    title: "Title",
+    text: "Text",
+    size: TextSize.M,
+};
+
 export const RegularL = Template.bind({});
 RegularL.args = {
     title: "Title",
