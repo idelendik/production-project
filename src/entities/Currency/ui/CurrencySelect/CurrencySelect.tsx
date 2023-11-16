@@ -5,6 +5,7 @@ import { Select } from "shared/ui/Select/Select";
 import { useTranslation } from "react-i18next";
 import { Currency } from "../../model/types/currency";
 import { memo, useCallback } from "react";
+import { ListBox } from "shared/ui/ListBox/ListBox";
 
 interface CurrencySelectProps {
     className?: string;
@@ -34,15 +35,17 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
     }, [onChange]);
 
     return (
-        <Select
+        <ListBox
             className={classNames(cls.CurrencySelect,{}, [className])}
-            label={t("your_currency")}
-            options={options}
+            items={options}
             value={value}
+            defaultValue={t("select_currency")}
+            label={`${t("your_currency")}>`}
             onChange={onChangeHandler}
             readonly={readonly}
+            direction="top"
         />
-    );
+    )
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)

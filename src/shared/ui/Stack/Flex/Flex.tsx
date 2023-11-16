@@ -53,7 +53,7 @@ export const Flex = memo((props: FlexProps) => {
         align= "center",
         direction= "row",
         gap,
-        max,
+        max
     } = props;
 
     const classes = [
@@ -69,7 +69,7 @@ export const Flex = memo((props: FlexProps) => {
     }
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)}>
+        <div {...props} className={classNames(cls.Flex, mods, classes)}>
             {children}
         </div>
     );

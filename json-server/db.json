@@ -31,7 +31,8 @@
       "createdAt": "25.01.2021",
       "userId": "1",
       "type": [
-        "IT", "JS"
+        "IT",
+        "JS"
       ],
       "blocks": [
         {
@@ -83,7 +84,8 @@
       "createdAt": "25.01.2019",
       "userId": "1",
       "type": [
-        "PROGRAMMING", "SKILLS"
+        "PROGRAMMING",
+        "SKILLS"
       ],
       "blocks": [
         {
@@ -135,7 +137,8 @@
       "createdAt": "25.01.2008",
       "userId": "1",
       "type": [
-        "IT", "PRO"
+        "IT",
+        "PRO"
       ],
       "blocks": [
         {
@@ -407,7 +410,8 @@
       "createdAt": "25.01.2022",
       "userId": "1",
       "type": [
-        "ART", "SPACE"
+        "ART",
+        "SPACE"
       ],
       "blocks": [
         {
@@ -431,7 +435,8 @@
       "createdAt": "25.01.2022",
       "userId": "1",
       "type": [
-        "IT", "NATURE"
+        "IT",
+        "NATURE"
       ],
       "blocks": [
         {
@@ -503,7 +508,8 @@
       "createdAt": "25.01.2022",
       "userId": "1",
       "type": [
-        "IT", "NATURE"
+        "IT",
+        "NATURE"
       ],
       "blocks": [
         {
@@ -575,7 +581,8 @@
       "createdAt": "25.01.2022",
       "userId": "1",
       "type": [
-        "IT", "ART"
+        "IT",
+        "ART"
       ],
       "blocks": [
         {
@@ -657,7 +664,7 @@
       "firstname": "Igor",
       "lastname": "D.",
       "age": 34,
-      "currency": "BYN",
+      "currency": "RUB",
       "country": "Belarus",
       "city": "Minsk",
       "username": "admin",
