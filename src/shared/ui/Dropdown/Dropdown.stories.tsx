@@ -65,7 +65,7 @@ OpenToTopLeft.args = {
 
 export const PrimaryWithButtonTriger = Template.bind({});
 PrimaryWithButtonTriger.args = {
-    trigger: <span>Open</span>,
+    trigger: <span>123</span>,
     items: [
         { content: "Content 1" },
         { content: "Content 2" },
