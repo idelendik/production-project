@@ -31,10 +31,26 @@
     box-shadow: 2px 2px 8px var(--listbox-bg);
 }
 
-
-.optionsTop {
-    bottom: 100%;
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
 }
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.optionsTopLeft {
+    bottom: 100%;
+    right: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}
+
 .item {
     padding: 10px 20px;
 }

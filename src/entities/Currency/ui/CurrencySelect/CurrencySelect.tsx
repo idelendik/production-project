@@ -1,7 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 
 import cls from "./CurrencySelect.module.scss"
-import { Select } from "shared/ui/Select/Select";
 import { useTranslation } from "react-i18next";
 import { Currency } from "../../model/types/currency";
 import { memo, useCallback } from "react";
@@ -43,7 +42,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
             label={`${t("your_currency")}>`}
             onChange={onChangeHandler}
             readonly={readonly}
-            direction="top"
+            direction="top right"
         />
     )
 });

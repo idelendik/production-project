@@ -9,6 +9,9 @@ export default {
     argTypes: {
         backgroundColor: { control: "color" },
     },
+    decorators: [
+        Story => <div style={{ padding:100 }}><Story /></div>
+    ]
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (props) => <ListBox {...props} />;
@@ -16,11 +19,44 @@ const Template: ComponentStory<typeof ListBox> = (props) => <ListBox {...props} 
 export const Primary = Template.bind({});
 Primary.args = {
     items: [
-        { value: "1", content: "1" },
-        { value: "2", content: "2" }
+        { value: "1", content: "SomecontentSomeContent1" },
+        { value: "2", content: "SomecontentSomeContent2" }
     ],
     value: "Select a value",
     onChange: () => {},
+};
+
+export const OpenToBottomLeft = Template.bind({});
+OpenToBottomLeft.args = {
+    items: [
+        { value: "1", content: "SomecontentSomeContent1" },
+        { value: "2", content: "SomecontentSomeContent2" }
+    ],
+    value: "Select a value",
+    onChange: () => {},
+    direction: "bottom left"
+};
+
+export const OpenToTopRight = Template.bind({});
+OpenToTopRight.args = {
+    items: [
+        { value: "1", content: "SomecontentSomeContent1" },
+        { value: "2", content: "SomecontentSomeContent2" }
+    ],
+    value: "Select a value",
+    onChange: () => {},
+    direction: "top right"
+};
+
+export const OpenToTopLeft = Template.bind({});
+OpenToTopLeft.args = {
+    items: [
+        { value: "1", content: "SomecontentSomeContent1" },
+        { value: "2", content: "SomecontentSomeContent2" }
+    ],
+    value: "Select a value",
+    onChange: () => {},
+    direction: "top left"
 };
 
 export const WithDefaultValue = Template.bind({});
@@ -78,16 +114,4 @@ Readonly.args = {
     label: "Label>",
     readonly: true,
 
-};
-
-export const DropdownOpenToTop = Template.bind({});
-DropdownOpenToTop.args = {
-    items: [
-        { value: "1", content: "1" },
-        { value: "2", content: "2" }
-    ],
-    value: "Select a value",
-    onChange: () => {},
-    label: "Label>",
-    direction: "top"
 };
