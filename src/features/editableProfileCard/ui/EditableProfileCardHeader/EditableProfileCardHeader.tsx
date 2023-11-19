@@ -1,21 +1,23 @@
+import { memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 
-import { Text } from "shared/ui/Text/Text";
-import { Button } from "shared/ui/Button";
-import { ButtonTheme } from "shared/ui/Button/ui/Button";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from "entities/Profile";
-import { useCallback } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData } from "entities/User";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
+import { profileActions } from "../../model/slice/profileSlice";
+import { getProfileData } from "../../model/selectors/getProfileData/getProfileData"
+import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly"
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
+import { HStack } from "shared/ui/Stack";
+import { Text } from "shared/ui/Text/Text";
+import { Button, ButtonTheme } from "shared/ui/Button";
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
     className?: string
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
     const { t } = useTranslation("profilePageHeader");
 
     const authData = useSelector(getUserAuthData);
@@ -72,4 +74,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             )}
         </HStack>
     );
-};
+});
+
+// Fix for memo - ESLint: Component definition is missing display name(react/display-name)
+EditableProfileCardHeader.displayName = "EditableProfileCardHeader"

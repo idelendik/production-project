@@ -1,9 +1,9 @@
 import { StateSchema } from "app/providers/StoreProvider";
-import { Profile } from "../../types/profile";
+import { Profile } from "entities/Profile";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country/model/types/country";
 
-export const defaultProfile: Profile = {
+export const defaultProfile: Profile= {
     id: "",
     firstname: "",
     lastname: "",

@@ -5,6 +5,7 @@ import { userReducer } from "entities/User";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "shared/api/api";
 import { scrollRestorationReducer } from "features/scrollRestoration";
+import { rtkApi } from "shared/api/rtkApi";
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -15,6 +16,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         scrollRestoration: scrollRestorationReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);
@@ -31,7 +33,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArg
             }
-        })
+        }).concat(rtkApi.middleware),
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

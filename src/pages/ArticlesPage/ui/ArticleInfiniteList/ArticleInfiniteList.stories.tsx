@@ -1,18 +1,18 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import ArticleEditPage from "./ArticleEditPage";
+import { ArticleInfiniteList } from "./ArticleInfiniteList";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 
 export default {
-    title: "pages/ArticleEditPage/ArticleEditPage",
-    component: ArticleEditPage,
+    title: "pages/ArticlesPage/ArticleInfiniteList",
+    component: ArticleInfiniteList,
     argTypes: {
         backgroundColor: { control: "color" },
     },
-} as ComponentMeta<typeof ArticleEditPage>;
+} as ComponentMeta<typeof ArticleInfiniteList>;
 
-const Template: ComponentStory<typeof ArticleEditPage> = (args) => <ArticleEditPage {...args} />;
+const Template: ComponentStory<typeof ArticleInfiniteList> = (args) => <ArticleInfiniteList {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

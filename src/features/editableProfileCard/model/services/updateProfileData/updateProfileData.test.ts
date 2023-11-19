@@ -1,8 +1,10 @@
 import { updateProfileData } from "./updateProfileData";
 import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Profile, ValidateProfileError } from "../../types/profile";
+import { Profile } from "entities/Profile";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
+
 
 const data: Profile = {
     id: "1",
