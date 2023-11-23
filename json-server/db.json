@@ -646,6 +646,18 @@
       "userId": "1",
       "text": "aasd",
       "id": "BmWMgi2"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "asd",
+      "id": "FVAIckD"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "asd",
+      "id": "rBLQF18"
     }
   ],
   "users": [
@@ -653,21 +665,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://img3.wallspic.com/crops/5/1/8/3/6/163815/163815-cyberpunk-vaporwave-synthwave_art-synthwave-art-1920x1080.jpg"
     },
     {
       "id": "2",
       "username": "guest",
       "password": "1233",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": ""
     },
     {
       "id": "3",
       "username": "manager",
       "password": "1233",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": ""
     }
   ],
