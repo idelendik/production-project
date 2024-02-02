@@ -3,7 +3,7 @@ import { Page } from "widgets/Page/Page";
 const AdminPanelPage = () => {
     return (
         <Page>
-            adminPanelPage
+            123
         </Page>
     )
 };

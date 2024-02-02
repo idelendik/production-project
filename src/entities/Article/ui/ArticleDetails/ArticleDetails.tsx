@@ -22,11 +22,12 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import ViewsIcon from "shared/assets/icons/views-icon.svg";
 import CalendarIcon from "shared/assets/icons/calendar-icon.svg";
 import { Icon } from "shared/ui/Icon/Icon";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
+import { ArticleBlock } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HStack, VStack } from "shared/ui/Stack";
+import { ArticleBlockType } from "../../model/consts/consts";
 
 interface ArticleDetailsProps {
     className?: string

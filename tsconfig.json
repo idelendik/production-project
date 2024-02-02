@@ -17,7 +17,8 @@
 
     // allows to use default imports from packages which don't support it
     // for example "import React from 'react';" instead of "import * as React from 'react';"
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

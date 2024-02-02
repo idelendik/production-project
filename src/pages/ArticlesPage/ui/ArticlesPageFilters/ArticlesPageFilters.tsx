@@ -5,6 +5,7 @@ import cls from "./ArticlesPageFilters.module.scss"
 import {
     ArticleSortField,
     ArticleSortSelector,
+    ArticleType,
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector
@@ -23,7 +24,6 @@ import { Input } from "shared/ui/Input";
 import { SortOrder } from "shared/types";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
-import { ArticleType } from "entities/Article/model/types/article";
 
 interface ArticlesPageFiltersProps {
     className?: string;

@@ -1,7 +1,7 @@
 import { validateProfileData } from "./validateProfileData";
 import { Profile } from "entities/Profile";
-import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 import { Country } from "entities/Country";
+import { ValidateProfileError } from "../../consts/consts";
 
 describe("validateProfileData.test", () => {
     const p: Profile = {};
