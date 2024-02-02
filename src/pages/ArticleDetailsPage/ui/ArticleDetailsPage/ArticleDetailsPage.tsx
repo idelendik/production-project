@@ -4,7 +4,6 @@ import cls from "./ArticleDetailsPage.module.scss"
 import { memo } from "react";
 import { ArticleDetails } from "entities/Article";
 import { useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Page } from "widgets/Page/Page";
 import { articleDetailsPageReducer } from "../../model/slice";
@@ -22,17 +21,7 @@ const reducers: ReducersList = {
 }
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    const { t } = useTranslation();
-
     const { id } = useParams<{id: string}>();
-
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {t("article_with_this_id_not_found")}
-            </Page>
-        )
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers}>

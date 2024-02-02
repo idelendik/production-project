@@ -83,6 +83,9 @@ export const ArticleList = (props: ArticleListProps) => {
                 isScrolling,
                 scrollTop
             }) => (
+                // TODO: use 'react-window' or even 'react-virtuozo' instead
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 <div ref={registerChild} className={classNames(cls.ArticleList,{}, [cls[view], className])}>
                     {virtualised
                         ? (

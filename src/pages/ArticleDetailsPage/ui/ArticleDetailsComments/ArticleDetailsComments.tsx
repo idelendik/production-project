@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { memo, Suspense, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 
 import { Text, TextSize } from "shared/ui/Text/Text";
@@ -15,10 +15,11 @@ import {
     fetchCommentsByArticleId
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { VStack } from "shared/ui/Stack";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComments = memo(({ className, id: articleId }: ArticleDetailsCommentsProps) => {
@@ -40,7 +41,9 @@ export const ArticleDetailsComments = memo(({ className, id: articleId }: Articl
         <VStack gap="16" max className={classNames("", {}, [className])}>
             <Text size={TextSize.L} text={t("comments_text")} />
 
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Skeleton />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
 
             <CommentList isLoading={commentsIsLoading} comments={comments} />
         </VStack>

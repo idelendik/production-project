@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 // This component is for testing purpose only!
 export const BugButton = () => {
     const [error, setError] = useState(false);
+
+    const { t } = useTranslation();
 
     const throwError = () => {
         setError(true);

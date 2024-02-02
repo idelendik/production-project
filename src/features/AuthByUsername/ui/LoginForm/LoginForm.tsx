@@ -62,6 +62,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm,{}, [className])}>
                 <Text title={t("auth_form_title")} />
+                <p>{t("Please use the following credentials admin:123")}</p>
                 {error && <Text text={t("incorrect_username_password")} theme={TextTheme.ERROR}/>}
                 <Input
                     type="text"
