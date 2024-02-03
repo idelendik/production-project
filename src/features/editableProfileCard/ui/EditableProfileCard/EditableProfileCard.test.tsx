@@ -1,5 +1,5 @@
 import { componentRender } from "shared/lib/tests/componentRender/componentRender";
-import { EditableProfileCard } from "./editableProfileCard";
+import { EditableProfileCard } from "./EditableProfileCard";
 import { screen } from "@testing-library/react";
 import { Profile } from "entities/Profile";
 import { Currency } from "entities/Currency";
