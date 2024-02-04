@@ -1,8 +1,10 @@
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 
 import cls from "./Modal.module.scss"
-import React, { MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { Portal } from "../Portal/Portal";
+import { Overlay } from "../Overlay/Overlay";
+import { useTheme } from "app/providers/ThemeProvider";
 
 interface KeyboardEvent {
     key: string;
@@ -28,6 +30,8 @@ export const Modal = ({
     const [isMounted, setIsMounted] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+
+    const { theme } = useTheme();
 
     useEffect(() => {
         if(isOpen) {
@@ -55,10 +59,6 @@ export const Modal = ({
         }
     }, [closeHandler]);
 
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    }
-
     useEffect(() => {
         if (isOpen) {
             window.addEventListener("keydown", onKeyDown);
@@ -81,11 +81,10 @@ export const Modal = ({
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+            <div className={classNames(cls.Modal, mods, [className, theme, "app_modal"])}>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
