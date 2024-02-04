@@ -101,8 +101,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@react-spring/web": "^9.5.2",
     "@reduxjs/toolkit": "^1.8.0",
     "@storybook/cli": "^6.4.19",
+    "@use-gesture/react": "^10.2.19",
     "axios": "^0.26.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "i18next-browser-languagedetector": "^6.1.3",
