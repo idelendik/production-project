@@ -1,14 +1,11 @@
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 
 import cls from "./Modal.module.scss"
-import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, { ReactNode } from "react";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
 import { useTheme } from "app/providers/ThemeProvider";
-
-interface KeyboardEvent {
-    key: string;
-}
+import { useModal } from "shared/lib/hooks/useModal/useModal";
 
 export interface ModalProps {
     className?: string;
@@ -18,57 +15,22 @@ export interface ModalProps {
     lazy?: boolean;
 }
 
-const ANIMATION_DELAY_MS = 300;
+export const Modal = (props: ModalProps) => {
+    const {
+        className,
+        children,
+        isOpen,
+        onClose,
+        lazy,
+    } = props;
 
-export const Modal = ({
-    className,
-    children,
-    isOpen,
-    onClose,
-    lazy,
-}: ModalProps) => {
-    const [isMounted, setIsMounted] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const {
+        close,
+        isClosing,
+        isMounted
+    } = useModal({ animationDelay: 300, isOpen, onClose });
 
     const { theme } = useTheme();
-
-    useEffect(() => {
-        if(isOpen) {
-            setIsMounted(true);
-        }
-
-        return () => {
-            setIsMounted(false);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY_MS);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent): void => {
-        if (e.key === "Escape") {
-            closeHandler();
-        }
-    }, [closeHandler]);
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener("keydown", onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timerRef.current);
-            window.removeEventListener("keydown", onKeyDown);
-        }
-    }, [isOpen, onKeyDown]);
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -82,7 +44,7 @@ export const Modal = ({
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme, "app_modal"])}>
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
                 <div className={cls.content}>
                     {children}
                 </div>
