@@ -6,6 +6,7 @@ import cls from "./Drawer.module.scss";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay"
 
+import { AnimationProvider } from "@/shared/lib/components/AnimationProvider";
 
 import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
 
@@ -91,14 +92,21 @@ const DrawerContent = memo((props: DrawerProps) => {
     )
 })
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) return null;
 
     return <DrawerContent {...props} />
-});
+};
+
+export const Drawer = (props: DrawerProps) => {
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props} />
+        </AnimationProvider>
+    )
+};
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-Drawer.displayName = "Drawer"
 DrawerContent.displayName = "DrawerContent"
