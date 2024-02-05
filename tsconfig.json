@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     // allows to work with commonJS modules using 'import' instead of 'require'
     "esModuleInterop": true,

@@ -1,5 +1,5 @@
 import { fetchProfileData } from "./fetchProfileData";
-import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { defaultProfile } from "../../selectors/getProfileData/getProfileData";
 
 

@@ -1,10 +1,10 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { memo } from "react";
-import FlagRU from "shared/assets/icons/flag-ru-icon.svg";
-import FlagUS from "shared/assets/icons/flag-us-icon.svg";
+import FlagRU from "@/shared/assets/icons/flag-ru-icon.svg";
+import FlagUS from "@/shared/assets/icons/flag-us-icon.svg";
 
 interface LangSwitcherProps {
     className?: string

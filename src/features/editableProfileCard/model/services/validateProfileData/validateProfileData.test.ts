@@ -1,6 +1,6 @@
 import { validateProfileData } from "./validateProfileData";
-import { Profile } from "entities/Profile";
-import { Country } from "entities/Country";
+import { Profile } from "@/entities/Profile";
+import { Country } from "@/entities/Country";
 import { ValidateProfileError } from "../../consts/consts";
 
 describe("validateProfileData.test", () => {
