@@ -69,7 +69,7 @@ export const Flex = memo((props: FlexProps) => {
     }
 
     return (
-        <div {...props} className={classNames(cls.Flex, mods, classes)}>
+        <div className={classNames(cls.Flex, mods, classes)}>
             {children}
         </div>
     );
