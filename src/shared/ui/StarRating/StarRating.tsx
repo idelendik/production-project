@@ -10,7 +10,7 @@ interface StarRatingProps {
     className?: string;
     onSelect?: (startsCount: number) => void;
     size?: number;
-    selectedStarts?: number;
+    selectedStars?: number;
 }
 
 const stars = [1,2,3,4,5];
@@ -20,11 +20,11 @@ export const StarRating = memo((props: StarRatingProps) => {
         className,
         onSelect,
         size = 30,
-        selectedStarts = 0
+        selectedStars = 0
     } = props;
 
-    const [currentStarsCount, setCurrentStarsCount] = useState(0);
-    const [isSelected, setIsSelected] = useState(Boolean(selectedStarts));
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
+    const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
     const onHover = (starsCount: number) => () => {
         if(!isSelected) {
@@ -40,7 +40,7 @@ export const StarRating = memo((props: StarRatingProps) => {
 
     const onClick = (starsCount: number) => () => {
         if(!isSelected) {
-            onSelect?.(selectedStarts);
+            onSelect?.(currentStarsCount);
             setCurrentStarsCount(starsCount);
             setIsSelected(true);
         }

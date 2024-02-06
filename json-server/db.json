@@ -1,5 +1,5 @@
 {
-  "notifications" : [
+  "notifications": [
     {
       "id": "1",
       "title": "Notification 1",
@@ -733,6 +733,37 @@
       "city": "Moscow",
       "username": "admin1",
       "avatar": "https://avatars.mds.yandex.net/i?id=32ab00c547e3b2e69591c0fab6ef1973ccde787b-9182360-images-thumbs&n=13"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Faasdadasd arti",
+      "userId": 1,
+      "articleId": 5
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 2,
+      "feedback": "r",
+      "id": "id14iLk"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 5,
+      "id": "IeIKEFC"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Faasdadasd prof",
+      "userId": 1,
+      "profileId": 5
     }
   ]
 }
