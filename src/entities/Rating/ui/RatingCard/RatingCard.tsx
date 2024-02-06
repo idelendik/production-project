@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import cls from "./RatingCard.module.scss"

@@ -9,34 +9,6 @@
     align-items: flex-end;
 }
 
-//.content {
-//    height: 70%;
-//    background: var(--bg-color);
-//    bottom: 0;
-//    border-top-left-radius: 12px;
-//    border-top-right-radius: 12px;
-//    position: relative;
-//    width: 100%;
-//    min-height: 100px;
-//    padding: 20px;
-//    transition: 0.3s transform;
-//    transform: translateY(100%);
-//    overflow-y: auto;
-//    overflow-x: hidden;
-//}
-//
-//.content::before {
-//    content: "";
-//    position: relative;
-//    display: block;
-//    width: 100%;
-//    height: 10px;
-//    background: var(--bg-color);
-//    margin: auto;
-//    bottom: 40px;
-//    border-radius: 12px;
-//}
-
 .opened {
     pointer-events: auto;
     opacity: 1;
@@ -46,12 +18,6 @@
         transform: translateY(0%);
     }
 }
-
-//.isClosing {
-//    .content {
-//        transform: translateY(100%);
-//    }
-//}
 
 .sheet {
     z-index: 100;
