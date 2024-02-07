@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { NotificationItem } from "./NotificationItem";
 
 export default {
-    title: "unspecified/NotificationItem",
+    title: "entities/Notification/NotificationItem",
     component: NotificationItem,
     argTypes: {
         backgroundColor: { control: "color" },
