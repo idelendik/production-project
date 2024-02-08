@@ -56,6 +56,8 @@ module.exports = {
         }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
-        "idelendik-eslint/fsd-imports-checker": "error",
+        "idelendik-eslint/fsd-imports-checker": ["error", {
+            alias: "@"
+        }],
     }
 };
