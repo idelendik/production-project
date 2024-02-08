@@ -1,7 +1,7 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { Profile } from "@/entities/Profile";
 import { Currency } from "@/entities/Currency";
-import { Country } from "@/entities/Country/model/types/country";
+import { Country } from "@/entities/Country";
 
 export const defaultProfile: Profile= {
     id: "",

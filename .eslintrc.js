@@ -59,5 +59,8 @@ module.exports = {
         "idelendik-eslint/fsd-imports-checker": ["error", {
             alias: "@"
         }],
+        "idelendik-eslint/public-api-imports": ["error", {
+            alias: "@"
+        }],
     }
 };

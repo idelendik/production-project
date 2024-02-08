@@ -8,8 +8,7 @@ import { Profile } from "../../model/types/profile";
 import { Loader } from "@/shared/ui/Loader";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "@/entities/Currency";
-import { Country } from "@/entities/Country/model/types/country";
-import { CountrySelect } from "@/entities/Country";
+import { Country, CountrySelect } from "@/entities/Country";
 import { HStack, VStack } from "@/shared/ui/Stack";
 
 interface ProfileCardProps {
