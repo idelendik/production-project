@@ -70,7 +70,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^8.44.0",
     "eslint-plugin-i18next": "^6.0.3",
-    "eslint-plugin-idelendik-eslint": "^0.0.4",
+    "eslint-plugin-idelendik-eslint": "^0.0.6",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-storybook": "^0.6.13",
     "file-loader": "^6.2.0",

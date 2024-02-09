@@ -63,5 +63,9 @@ module.exports = {
             alias: "@",
             testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"]
         }],
+        "idelendik-eslint/layer-imports": ["error", {
+            alias: "@",
+            ignoreImportPatterns: ["**/StoreProvider", "**/testing"]
+        }],
     }
 };
