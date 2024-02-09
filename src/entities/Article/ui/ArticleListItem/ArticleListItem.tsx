@@ -13,8 +13,8 @@ import { ButtonTheme } from "@/shared/ui/Button/ui/Button";
 import { useTranslation } from "react-i18next";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import { ArticleBlockType, ArticleView } from "../../model/consts/consts";
+import { RoutePath } from "@/shared/const/router";
 
 interface ArticleListItemProps {
     className?: string;
