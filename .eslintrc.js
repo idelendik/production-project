@@ -60,7 +60,8 @@ module.exports = {
             alias: "@"
         }],
         "idelendik-eslint/public-api-imports": ["error", {
-            alias: "@"
+            alias: "@",
+            testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"]
         }],
     }
 };
