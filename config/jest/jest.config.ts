@@ -64,7 +64,8 @@ export default {
 
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
-        "\\.(svg|jpg)$": path.resolve(__dirname, "jestEmptyComponent.tsx")
+        "\\.(svg|jpg)$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        "^@/(.*)$": "<rootDir>/src/$1",
     },
 
     // Use this configuration option to add custom reporters to Jest
