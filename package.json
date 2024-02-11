@@ -123,7 +123,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-virtualized": "^9.22.3"
+    "react-virtualized": "^9.22.3",
+    "storybook-addon-themes": "^6.1.0"
   },
   "loki": {
     "configurations": {
