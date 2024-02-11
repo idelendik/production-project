@@ -1,7 +1,7 @@
 import { memo, Suspense, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { Text, TextSize } from "@/shared/ui/Text";
 import { AddCommentForm } from "@/features/addCommentForm";
 import { CommentList } from "@/entities/Comment";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ import {
     fetchCommentsByArticleId
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { VStack } from "@/shared/ui/Stack";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 interface ArticleDetailsCommentsProps {
     className?: string;

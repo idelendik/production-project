@@ -19,7 +19,7 @@ import {
     getArticlesPageView
 } from "../../model/selectors/articlesPageSelectors";
 import { useTranslation } from "react-i18next";
-import { Card } from "@/shared/ui/Card/Card";
+import { Card } from "@/shared/ui/Card";
 import { Input } from "@/shared/ui/Input";
 import { SortOrder } from "@/shared/types";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";

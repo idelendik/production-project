@@ -10,7 +10,7 @@ import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/get
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
 import { HStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 
 interface EditableProfileCardHeaderProps {

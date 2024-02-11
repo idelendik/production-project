@@ -5,7 +5,7 @@ import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 import ThemeSwitcherIcon from "@/shared/assets/icons/theme-switcher.svg";
 import { Button } from "@/shared/ui/Button";
-import { ButtonTheme } from "@/shared/ui/Button/ui/Button";
+import { ButtonTheme } from "@/shared/ui/Button";
 import { memo } from "react";
 
 interface ThemeSwitcherProps {

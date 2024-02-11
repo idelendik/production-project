@@ -14,14 +14,14 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading
 } from "../../model/selectors/articleDetails";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text/Text";
+import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
 import { useTranslation } from "react-i18next";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Avatar } from "@/shared/ui/Avatar";
 
 import ViewsIcon from "@/shared/assets/icons/views-icon.svg";
 import CalendarIcon from "@/shared/assets/icons/calendar-icon.svg";
-import { Icon } from "@/shared/ui/Icon/Icon";
+import { Icon } from "@/shared/ui/Icon";
 import { ArticleBlock } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";

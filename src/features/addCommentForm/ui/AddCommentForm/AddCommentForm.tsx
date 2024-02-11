@@ -5,7 +5,7 @@ import cls from "./AddCommentForm.module.scss"
 import { Input } from "@/shared/ui/Input";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/shared/ui/Button";
-import { ButtonTheme } from "@/shared/ui/Button/ui/Button";
+import { ButtonTheme } from "@/shared/ui/Button";
 import { useSelector } from "react-redux";
 import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
