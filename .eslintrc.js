@@ -36,7 +36,8 @@ module.exports = {
         "react",
         "i18next",
         "react-hooks",
-        "idelendik-eslint"
+        "idelendik-eslint",
+        "unused-imports"
     ],
     rules: {
         indent: ["error", 4],
@@ -67,5 +68,6 @@ module.exports = {
             alias: "@",
             ignoreImportPatterns: ["**/StoreProvider", "**/testing"]
         }],
+        "unused-imports/no-unused-imports": "error",
     }
 };
