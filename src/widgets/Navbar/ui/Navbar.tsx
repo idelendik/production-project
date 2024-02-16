@@ -13,7 +13,7 @@ import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
 import { HStack } from "@/shared/ui/Stack";
 import { NotificationButton } from "@/features/notificationButton";
 import { AvatarDropdown } from "@/features/avatarDropdown";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteArticleCreate } from "@/shared/const/router";
 
 interface NavbarProps {
     className?: string;
@@ -38,7 +38,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <header className={classNames(cls.Navbar,{}, [className])}>
                 <Text className={cls.appName} title={t("production_project")} theme={TextTheme.INVERTED} />
 
-                <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>{t("new_article")}</AppLink>
+                <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>{t("new_article")}</AppLink>
 
                 <HStack gap={"16"} className={cls.actions}>
                     <NotificationButton />

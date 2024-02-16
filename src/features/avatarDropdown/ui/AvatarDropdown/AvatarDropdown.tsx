@@ -7,7 +7,7 @@ import { Dropdown } from "@/shared/ui/Popups";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
 import { useTranslation } from "react-i18next";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 
 interface AvatarDropdownProps {
     className?: string
@@ -36,8 +36,8 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         <Dropdown
             className={classNames(cls.AvatarDropdown, {}, [className])}
             items={[
-                ...(isAdminPanelAvailable ? [{ content: t("admin"), href: RoutePath.admin_panel }] : []),
-                { content: t("Profile"), href: `${RoutePath.profile}${authData.id}` },
+                ...(isAdminPanelAvailable ? [{ content: t("admin"), href: getRouteAdmin() }] : []),
+                { content: t("Profile"), href: getRouteProfile(authData.id) },
                 { content: t("Logout"), onClick: onLogout },
             ]}
             trigger={<Avatar size={30} src={authData.avatar} />}

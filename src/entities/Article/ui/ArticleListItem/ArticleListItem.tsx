@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { AppLink } from "@/shared/ui/AppLink";
 import { ArticleBlockType, ArticleView } from "../../model/consts/consts";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 
 interface ArticleListItemProps {
     className?: string;
@@ -49,7 +49,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <img src={article.img} alt={article.title} className={cls.img} />
                     {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
                     <div className={cls.footer}>
-                        <AppLink target={target} to={RoutePath.article_details + article.id}>
+                        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                             <Button theme={ButtonTheme.OUTLINE}>{t("read_more")}</Button>
                         </AppLink>
                         <Text text={String(article.views)} className={cls.views} />
@@ -61,7 +61,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink target={target} to={RoutePath.article_details + article.id} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <AppLink target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <img src={article.img} alt={article.title} className={cls.img} />
