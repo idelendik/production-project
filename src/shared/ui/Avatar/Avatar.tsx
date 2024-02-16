@@ -8,7 +8,7 @@ import { AppImage } from "../AppImage";
 import { Icon } from "../Icon";
 
 import ProfileDefaultIcon from "../../assets/icons/profile-default-icon.svg";
-import {Skeleton} from "@/shared/ui/Skeleton";
+import { Skeleton } from "../Skeleton";
 
 interface AvatarProps {
     className?: string;
