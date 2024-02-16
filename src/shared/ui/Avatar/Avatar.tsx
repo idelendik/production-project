@@ -4,6 +4,11 @@ import cls from "./Avatar.module.scss"
 import { CSSProperties, useMemo } from "react";
 
 import DefaultImg from "./Avatar.jpg";
+import { AppImage } from "../AppImage";
+import { Icon } from "../Icon";
+
+import ProfileDefaultIcon from "../../assets/icons/profile-default-icon.svg";
+import {Skeleton} from "@/shared/ui/Skeleton";
 
 interface AvatarProps {
     className?: string;
@@ -31,8 +36,13 @@ export const Avatar = (props: AvatarProps) => {
         }
     }, [size]);
 
+    const fallback = <Skeleton width={size} height={size} border="50%" />;
+    const errorFallback = <Icon width={size} height={size} Svg={ProfileDefaultIcon} />;
+
     return (
-        <img
+        <AppImage
+            fallback={fallback}
+            errorFallback={errorFallback}
             className={classNames(cls.Avatar, mods, [className])}
             style={styles}
             src={imageOrDefault}
