@@ -8,7 +8,7 @@ import GridIcon from "@/shared/assets/icons/grid-icon.svg";
 import { Button } from "@/shared/ui/Button";
 import { Icon } from "@/shared/ui/Icon";
 import { ButtonTheme } from "@/shared/ui/Button";
-import { ArticleView } from "../../model/consts/consts";
+import { ArticleView } from "@/entities/Article";
 
 interface ArticleViewSelectorProps {
     className?: string;
