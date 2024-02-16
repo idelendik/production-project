@@ -25,7 +25,8 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install",
-    "generate:fsdSlice": "node ./scripts/createSlice"
+    "generate:fsdSlice": "node ./scripts/createSlice",
+    "postinstall": "node ./scripts/clear-cache.js"
   },
   "keywords": [],
   "author": "",
