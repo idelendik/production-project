@@ -709,6 +709,15 @@
         "MANAGER"
       ],
       "avatar": ""
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://www.pikpng.com/pngl/b/92-926999_test-user-clipart.png"
     }
   ],
   "profile": [
