@@ -77,6 +77,7 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
             <div className={cls.sortWrapper}>
                 <ArticleSortSelector
+                    data-testid="ArticlesPageFilters.ArticleSortSelector"
                     order={order}
                     sort={sort}
                     onChangeOrder={onChangeOrder}
@@ -86,12 +87,14 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps
             </div>
             <Card className={cls.search}>
                 <Input
+                    data-testid="ArticlesPageFilters.Search"
                     placeholder={t("search_input_placeholder")}
                     value={search}
                     onChange={onChangeSearch}
                 />
             </Card>
             <ArticleTypeTabs
+                data-testid="ArticlesPageFilters.ArticleTypeTabs"
                 value={type}
                 onChangeType={onChangeType}
                 className={cls.tabs}

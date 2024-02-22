@@ -29,6 +29,7 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
 
     return (
         <Tabs
+            data-testid="ArticleTypeTabs"
             tabs={typeTabs}
             value={value}
             onTabClick={onTabClick}

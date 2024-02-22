@@ -62,12 +62,12 @@ export const RatingCard = memo(( props: RatingCardProps) => {
     const modalContent = (
         <>
             <Text title={feedBackTitle} />
-            <Input placeholder={t("you_text")} value={feedback} onChange={setFeedback} />
+            <Input data-testid="RatingCard.Input" placeholder={t("you_text")} value={feedback} onChange={setFeedback} />
         </>
     );
 
     return (
-        <Card className={className} max>
+        <Card data-testid="RatingCard" className={className} max>
             <VStack align={"center"} gap={"8"} max>
                 <Text title={starsCount ? t("Thank you") : title}/>
                 <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
@@ -77,8 +77,8 @@ export const RatingCard = memo(( props: RatingCardProps) => {
                     <VStack max gap={"32"}>
                         {modalContent}
                         <HStack max gap={"16"} justify={"end"}>
-                            <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t("Close")}</Button>
-                            <Button onClick={acceptHandle}>{t("Send")}</Button>
+                            <Button data-testid="RatingCard.Close" onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t("Close")}</Button>
+                            <Button data-testid="RatingCard.Send" onClick={acceptHandle}>{t("Send")}</Button>
                         </HStack>
                     </VStack>
                 </Modal>
@@ -87,7 +87,7 @@ export const RatingCard = memo(( props: RatingCardProps) => {
                 <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
                     <VStack max gap={"32"}>
                         {modalContent}
-                        <Button fullWidth size={ButtonSize.L} onClick={acceptHandle}>{t("Send")}</Button>
+                        <Button data-testid="RatingCard.Send" fullWidth size={ButtonSize.L} onClick={acceptHandle}>{t("Send")}</Button>
                     </VStack>
                 </Drawer>
             </MobileView>

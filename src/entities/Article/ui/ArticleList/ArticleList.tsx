@@ -42,7 +42,10 @@ export const ArticleList = (props: ArticleListProps) => {
 
     return (
         // TODO: use 'react-window' or even 'react-virtuozo' instead of react-virtualized
-        <div className={classNames(cls.ArticleList,{}, [cls[view], className])}>
+        <div
+            data-testid="ArticleList"
+            className={classNames(cls.ArticleList,{}, [cls[view], className])}
+        >
             {
                 articles.map(article => (
                     <ArticleListItem

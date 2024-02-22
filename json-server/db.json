@@ -618,6 +618,103 @@
           ]
         }
       ]
+    },
+    {
+      "id": "oIYXC3p"
+    },
+    {
+      "id": "-o0oTI9"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "Mxmu5OH"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "TESTING"
+      ],
+      "blocks": [],
+      "id": "f2l61es"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "TESTING"
+      ],
+      "blocks": [],
+      "id": "OyPWgJ4"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "TESTING"
+      ],
+      "blocks": [],
+      "id": "LA1iOf-"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "TESTING"
+      ],
+      "blocks": [],
+      "id": "pt76GRR"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "BUSINESS"
+      ],
+      "blocks": [],
+      "id": "JM1kaUg"
+    },
+    {
+      "title": "[TESTING] Test article title",
+      "subtitle": "Test article subtitle",
+      "img": "https://sun9-14.userapi.com/6jn5sgDf4SZ_H-aBePsO2qzEhi_xx9wZzfcTpw/Irvybcr5F2k.jpg",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "BUSINESS"
+      ],
+      "blocks": [],
+      "id": "LaGRETN"
     }
   ],
   "comments": [
@@ -741,6 +838,17 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "admin1",
+      "avatar": "https://avatars.mds.yandex.net/i?id=32ab00c547e3b2e69591c0fab6ef1973ccde787b-9182360-images-thumbs&n=13"
+    },
+    {
+      "id": "4",
+      "firstname": "TestUser",
+      "lastname": "T.U.",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://avatars.mds.yandex.net/i?id=32ab00c547e3b2e69591c0fab6ef1973ccde787b-9182360-images-thumbs&n=13"
     }
   ],
