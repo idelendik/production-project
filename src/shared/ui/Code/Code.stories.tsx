@@ -1,13 +1,13 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Code } from "./Code";
+import { Code } from './Code';
 
 export default {
-    title: "shared/Code",
+    title: 'shared/Code',
     component: Code,
     argTypes: {
-        backgroundColor: { control: "color" },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Code>;
 
@@ -20,5 +20,5 @@ const b = 2;
     
 function sum(x, y) {
     return x + y;
-}`
+}`,
 };

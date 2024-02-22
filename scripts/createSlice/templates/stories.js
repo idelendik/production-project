@@ -1,4 +1,4 @@
-const { capitalize } = require("../helpers");
+const { capitalize } = require('../helpers');
 
 module.exports = (componentType, componentName) => `import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
@@ -13,7 +13,9 @@ export default {
     }
 } as ComponentMeta<typeof ${capitalize(componentName)}>;
 
-const Template: ComponentStory<typeof ${capitalize(componentName)}> = (args) => <${capitalize(componentName)} {...args} />;
+const Template: ComponentStory<typeof ${capitalize(
+    componentName,
+)}> = (args) => <${capitalize(componentName)} {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};`;

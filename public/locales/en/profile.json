@@ -1,7 +1,7 @@
 {
-  "server_error": "A server error has happened while saving",
-  "no_data": "No data provided",
-  "incorrect_country": "Incorrect country",
-  "incorrect_age": "Incorrect age",
-  "incorrect_user_data": "Incorrect user data"
+    "server_error": "A server error has happened while saving",
+    "no_data": "No data provided",
+    "incorrect_country": "Incorrect country",
+    "incorrect_age": "Incorrect age",
+    "incorrect_user_data": "Incorrect user data"
 }

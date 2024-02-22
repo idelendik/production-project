@@ -1,5 +1,7 @@
-const { capitalize } = require("../helpers");
+const { capitalize } = require('../helpers');
 
-module.exports = (componentName) => `export interface ${capitalize(componentName)}Schema {
+module.exports = (componentName) => `export interface ${capitalize(
+    componentName,
+)}Schema {
 
 }`;

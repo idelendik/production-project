@@ -1,10 +1,10 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./CurrencySelect.module.scss"
-import { useTranslation } from "react-i18next";
-import { Currency } from "../../model/types/currency";
-import { memo, useCallback } from "react";
-import { ListBox } from "@/shared/ui/Popups";
+import cls from './CurrencySelect.module.scss';
+import { useTranslation } from 'react-i18next';
+import { Currency } from '../../model/types/currency';
+import { memo, useCallback } from 'react';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CurrencySelectProps {
     className?: string;
@@ -20,32 +20,30 @@ const options = [
 ];
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
-    const {
-        className,
-        value,
-        onChange,
-        readonly,
-    } = props;
+    const { className, value, onChange, readonly } = props;
 
-    const { t } = useTranslation("currencySelect");
+    const { t } = useTranslation('currencySelect');
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Currency);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox
-            className={classNames(cls.CurrencySelect,{}, [className])}
+            className={classNames(cls.CurrencySelect, {}, [className])}
             items={options}
             value={value}
-            defaultValue={t("select_currency")}
-            label={`${t("your_currency")}>`}
+            defaultValue={t('select_currency')}
+            label={`${t('your_currency')}>`}
             onChange={onChangeHandler}
             readonly={readonly}
             direction="top right"
         />
-    )
+    );
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-CurrencySelect.displayName = "CurrencySelect";
+CurrencySelect.displayName = 'CurrencySelect';

@@ -1,16 +1,16 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useState } from 'react';
 
-import { Card } from "@/shared/ui/Card";
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
-import { StarRating } from "@/shared/ui/StarRating";
-import { Modal } from "@/shared/ui/Modal";
-import { Input } from "@/shared/ui/Input";
-import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { BrowserView, MobileView } from "react-device-detect";
-import { Drawer } from "@/shared/ui/Drawer";
-import { ButtonSize } from "@/shared/ui/Button";
+import { Card } from '@/shared/ui/Card';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { StarRating } from '@/shared/ui/StarRating';
+import { Modal } from '@/shared/ui/Modal';
+import { Input } from '@/shared/ui/Input';
+import { useTranslation } from 'react-i18next';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { Drawer } from '@/shared/ui/Drawer';
+import { ButtonSize } from '@/shared/ui/Button';
 
 interface RatingCardProps {
     className?: string;
@@ -22,7 +22,7 @@ interface RatingCardProps {
     rate?: number;
 }
 
-export const RatingCard = memo(( props: RatingCardProps) => {
+export const RatingCard = memo((props: RatingCardProps) => {
     const {
         className,
         title,
@@ -30,24 +30,27 @@ export const RatingCard = memo(( props: RatingCardProps) => {
         hasFeedback,
         onCancel,
         onAccept,
-        rate= 0
+        rate = 0,
     } = props;
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [starsCount, setStarsCount] = useState(rate);
-    const [feedback, setFeedback] = useState("");
+    const [feedback, setFeedback] = useState('');
 
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
 
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -62,32 +65,59 @@ export const RatingCard = memo(( props: RatingCardProps) => {
     const modalContent = (
         <>
             <Text title={feedBackTitle} />
-            <Input data-testid="RatingCard.Input" placeholder={t("you_text")} value={feedback} onChange={setFeedback} />
+            <Input
+                data-testid="RatingCard.Input"
+                placeholder={t('you_text')}
+                value={feedback}
+                onChange={setFeedback}
+            />
         </>
     );
 
     return (
         <Card data-testid="RatingCard" className={className} max>
-            <VStack align={"center"} gap={"8"} max>
-                <Text title={starsCount ? t("Thank you") : title}/>
-                <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
+            <VStack align={'center'} gap={'8'} max>
+                <Text title={starsCount ? t('Thank you') : title} />
+                <StarRating
+                    size={40}
+                    onSelect={onSelectStars}
+                    selectedStars={starsCount}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
-                    <VStack max gap={"32"}>
+                    <VStack max gap={'32'}>
                         {modalContent}
-                        <HStack max gap={"16"} justify={"end"}>
-                            <Button data-testid="RatingCard.Close" onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t("Close")}</Button>
-                            <Button data-testid="RatingCard.Send" onClick={acceptHandle}>{t("Send")}</Button>
+                        <HStack max gap={'16'} justify={'end'}>
+                            <Button
+                                data-testid="RatingCard.Close"
+                                onClick={cancelHandle}
+                                theme={ButtonTheme.OUTLINE_RED}
+                            >
+                                {t('Close')}
+                            </Button>
+                            <Button
+                                data-testid="RatingCard.Send"
+                                onClick={acceptHandle}
+                            >
+                                {t('Send')}
+                            </Button>
                         </HStack>
                     </VStack>
                 </Modal>
             </BrowserView>
             <MobileView>
                 <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-                    <VStack max gap={"32"}>
+                    <VStack max gap={'32'}>
                         {modalContent}
-                        <Button data-testid="RatingCard.Send" fullWidth size={ButtonSize.L} onClick={acceptHandle}>{t("Send")}</Button>
+                        <Button
+                            data-testid="RatingCard.Send"
+                            fullWidth
+                            size={ButtonSize.L}
+                            onClick={acceptHandle}
+                        >
+                            {t('Send')}
+                        </Button>
                     </VStack>
                 </Drawer>
             </MobileView>
@@ -96,4 +126,4 @@ export const RatingCard = memo(( props: RatingCardProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-RatingCard.displayName = "RatingCard"
+RatingCard.displayName = 'RatingCard';

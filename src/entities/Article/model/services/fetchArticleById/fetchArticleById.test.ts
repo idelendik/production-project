@@ -1,25 +1,27 @@
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { fetchArticleById } from "./fetchArticleById";
-import { defaultArticleDetails } from "../../../model/selectors/articleDetails";
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { fetchArticleById } from './fetchArticleById';
+import { defaultArticleDetails } from '../../../model/selectors/articleDetails';
 
-describe("fetchArticleById.test", () => {
-    test("successful", async () => {
+describe('fetchArticleById.test', () => {
+    test('successful', async () => {
         const thunk = new TestAsyncThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(Promise.resolve({ data: defaultArticleDetails }));
+        thunk.api.get.mockReturnValue(
+            Promise.resolve({ data: defaultArticleDetails }),
+        );
 
-        const result = await thunk.callThunk("1232");
+        const result = await thunk.callThunk('1232');
 
         expect(thunk.api.get).toHaveBeenCalled();
-        expect(result.meta.requestStatus).toBe("fulfilled");
+        expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(defaultArticleDetails);
-    })
+    });
 
-    test("error", async () => {
+    test('error', async () => {
         const thunk = new TestAsyncThunk(fetchArticleById);
         thunk.api.get.mockReturnValue(Promise.resolve({ status: 404 }));
 
-        const result = await thunk.callThunk("1232");
+        const result = await thunk.callThunk('1232');
 
-        expect(result.meta.requestStatus).toBe("rejected");
-    })
-})
+        expect(result.meta.requestStatus).toBe('rejected');
+    });
+});

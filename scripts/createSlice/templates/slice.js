@@ -1,4 +1,4 @@
-const { capitalize } = require("../helpers");
+const { capitalize } = require('../helpers');
 
 module.exports = (componentName) => {
     const schemaName = `${capitalize(componentName)}Schema`;
@@ -29,4 +29,5 @@ export const ${componentName}Slice = createSlice({
 })
 
 export const { reducer: ${componentName}Reducer } = ${componentName}Slice;
-export const { actions: ${componentName}Actions } = ${componentName}Slice;`};
+export const { actions: ${componentName}Actions } = ${componentName}Slice;`;
+};

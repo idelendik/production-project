@@ -1,22 +1,25 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./LoginForm.module.scss"
-import { Button } from "@/shared/ui/Button";
-import { useTranslation } from "react-i18next";
-import { Input } from "@/shared/ui/Input";
-import { memo, useCallback, useEffect } from "react";
-import { ButtonTheme } from "@/shared/ui/Button";
-import { useSelector } from "react-redux";
-import { loginActions } from "../../index";
-import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { loginReducer } from "../../model/slice/loginSlice";
-import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
-import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
-import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import cls from './LoginForm.module.scss';
+import { Button } from '@/shared/ui/Button';
+import { useTranslation } from 'react-i18next';
+import { Input } from '@/shared/ui/Input';
+import { memo, useCallback, useEffect } from 'react';
+import { ButtonTheme } from '@/shared/ui/Button';
+import { useSelector } from 'react-redux';
+import { loginActions } from '../../index';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { loginReducer } from '../../model/slice/loginSlice';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
     className?: string;
@@ -25,7 +28,7 @@ export interface LoginFormProps {
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
-}
+};
 
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
@@ -40,36 +43,47 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     useEffect(() => {
         return () => {
             dispatch(loginActions.clearError());
-        }
+        };
     }, [dispatch]);
 
-    const onChangeUsername = useCallback((value: string) => {
-        dispatch(loginActions.setUsername(value));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
-        if (result.meta.requestStatus === "fulfilled") {
+        if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
     }, [onSuccess, dispatch, username, password]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <div className={classNames(cls.LoginForm,{}, [className])}>
-                <Text title={t("auth_form_title")} />
-                <p>{t("Please use the following credentials admin:123")}</p>
-                {error && <Text text={t("incorrect_username_password")} theme={TextTheme.ERROR}/>}
+            <div className={classNames(cls.LoginForm, {}, [className])}>
+                <Text title={t('auth_form_title')} />
+                <p>{t('Please use the following credentials admin:123')}</p>
+                {error && (
+                    <Text
+                        text={t('incorrect_username_password')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     type="text"
                     className={cls.input}
                     value={username}
                     onChange={onChangeUsername}
-                    placeholder={t("Username")}
+                    placeholder={t('Username')}
                     autofocus
                 />
                 <Input
@@ -77,7 +91,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     className={cls.input}
                     value={password}
                     onChange={onChangePassword}
-                    placeholder={t("Password")}
+                    placeholder={t('Password')}
                 />
                 <Button
                     theme={ButtonTheme.OUTLINE}
@@ -85,7 +99,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     onClick={onLoginClick}
                     disabled={isLoading}
                 >
-                    {t("Login")}
+                    {t('Login')}
                 </Button>
             </div>
         </DynamicModuleLoader>
@@ -93,6 +107,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-LoginForm.displayName = "LoginForm";
+LoginForm.displayName = 'LoginForm';
 
 export default LoginForm;

@@ -1,16 +1,19 @@
-import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Page.module.scss"
-import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { getScrollByPath, scrollRestorationActions } from "@/features/scrollRestoration";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useLocation } from "react-router-dom";
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useSelector } from "react-redux";
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
-import { TestProps } from "@/shared/types/tests";
+import cls from './Page.module.scss';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import {
+    getScrollByPath,
+    scrollRestorationActions,
+} from '@/features/scrollRestoration';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useLocation } from 'react-router-dom';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useSelector } from 'react-redux';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -18,14 +21,10 @@ interface PageProps extends TestProps {
     onScrollEnd?: () => void;
 }
 
-export const PAGE_ID = "PAGE_ID";
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
-    const {
-        className,
-        children,
-        onScrollEnd
-    } = props;
+    const { className, children, onScrollEnd } = props;
 
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
@@ -33,7 +32,9 @@ export const Page = memo((props: PageProps) => {
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-    const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname));
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollByPath(state, pathname),
+    );
 
     useInfiniteScroll({
         triggerRef,
@@ -46,10 +47,12 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollRestorationActions.setScrollPosition({
-            path: pathname,
-            position: e.currentTarget.scrollTop,
-        }));
+        dispatch(
+            scrollRestorationActions.setScrollPosition({
+                path: pathname,
+                position: e.currentTarget.scrollTop,
+            }),
+        );
     }, 500);
 
     return (
@@ -58,7 +61,7 @@ export const Page = memo((props: PageProps) => {
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             id={PAGE_ID}
-            data-testid={props["data-testid"] ?? "Page"}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}
@@ -67,4 +70,4 @@ export const Page = memo((props: PageProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-Page.displayName = "Page"
+Page.displayName = 'Page';

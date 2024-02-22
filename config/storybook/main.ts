@@ -1,68 +1,70 @@
-import { Configuration, DefinePlugin } from "webpack";
-import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
-import path from "path";
-import { BuildPaths } from "../build/types/config";
+import { Configuration, DefinePlugin } from 'webpack';
+import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
+import path from 'path';
+import { BuildPaths } from '../build/types/config';
 
 module.exports = {
-    "stories": [
-        "../../src/**/*.stories.@(js|jsx|ts|tsx)"
-    ],
-    "addons": [
-        "@storybook/addon-links",
+    stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
+    addons: [
+        '@storybook/addon-links',
         {
-            name: "@storybook/addon-essentials",
+            name: '@storybook/addon-essentials',
             options: {
                 backgrounds: false,
-            }
+            },
         },
-        "@storybook/addon-interactions",
-        "storybook-addon-mock",
-        "storybook-addon-themes",
+        '@storybook/addon-interactions',
+        'storybook-addon-mock',
+        'storybook-addon-themes',
     ],
-    "framework": "@storybook/react",
-    "core": {
-        "builder": "webpack5"
+    framework: '@storybook/react',
+    core: {
+        builder: 'webpack5',
     },
     webpackFinal: async (config: Configuration) => {
         const paths: BuildPaths = {
-            build: "",
-            html: "",
-            entry: "",
-            src: path.resolve(__dirname, "..", "..", "src"),
-            locales: "",
-            buildLocales: "",
-        }
+            build: '',
+            html: '',
+            entry: '',
+            src: path.resolve(__dirname, '..', '..', 'src'),
+            locales: '',
+            buildLocales: '',
+        };
 
         config!.resolve!.modules!.push(paths.src);
-        config!.resolve!.extensions!.push(".ts", ".tsx");
+        config!.resolve!.extensions!.push('.ts', '.tsx');
         config!.resolve!.alias = {
             ...config!.resolve!.alias,
-            "@": paths.src
-        }
+            '@': paths.src,
+        };
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
-            if(/svg/.test(rule.test as string)) {
-                return { ...rule, exclude: /\.svg$/i };
-            }
+        config!.module!.rules = config!.module!.rules!.map(
+            (rule: RuleSetRule) => {
+                if (/svg/.test(rule.test as string)) {
+                    return { ...rule, exclude: /\.svg$/i };
+                }
 
-            return rule;
-        });
+                return rule;
+            },
+        );
 
         config!.module!.rules.push({
             test: /\.svg$/i,
-            use: ["@svgr/webpack"],
+            use: ['@svgr/webpack'],
         });
 
         config!.module!.rules.push(buildCssLoaders(true));
 
-        config!.plugins!.push(new DefinePlugin({
-            __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify("https://testapi.ru"),
-            __PROJECT__: JSON.stringify("storybook"),
-        }))
+        config!.plugins!.push(
+            new DefinePlugin({
+                __IS_DEV__: JSON.stringify(true),
+                __API__: JSON.stringify('https://testapi.ru'),
+                __PROJECT__: JSON.stringify('storybook'),
+            }),
+        );
 
         return config;
-    }
-}
+    },
+};

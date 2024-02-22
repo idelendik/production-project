@@ -1,22 +1,28 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./ArticleCodeBlockComponent.module.scss"
-import { memo } from "react";
-import { ArticleCodeBlock } from "../../model/types/article";
-import { Code } from "@/shared/ui/Code";
+import cls from './ArticleCodeBlockComponent.module.scss';
+import { memo } from 'react';
+import { ArticleCodeBlock } from '../../model/types/article';
+import { Code } from '@/shared/ui/Code';
 
 interface ArticleCodeBlockComponentProps {
     className?: string;
     block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo(({ className, block }: ArticleCodeBlockComponentProps) => {
-    return (
-        <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
-            <Code text={block.code} />
-        </div>
-    );
-});
+export const ArticleCodeBlockComponent = memo(
+    ({ className, block }: ArticleCodeBlockComponentProps) => {
+        return (
+            <div
+                className={classNames(cls.ArticleCodeBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                <Code text={block.code} />
+            </div>
+        );
+    },
+);
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-ArticleCodeBlockComponent.displayName = "ArticleCodeBlockComponent";
+ArticleCodeBlockComponent.displayName = 'ArticleCodeBlockComponent';

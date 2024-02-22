@@ -1,17 +1,19 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Overlay } from "./Overlay";
+import { Overlay } from './Overlay';
 
 export default {
-    title: "shared/Overlay",
+    title: 'shared/Overlay',
     component: Overlay,
     argTypes: {
-        backgroundColor: { control: "color" },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Overlay>;
 
-const Template: ComponentStory<typeof Overlay> = (args) => <Overlay {...args} />;
+const Template: ComponentStory<typeof Overlay> = (args) => (
+    <Overlay {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

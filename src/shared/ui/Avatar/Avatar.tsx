@@ -1,14 +1,14 @@
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Avatar.module.scss"
-import { CSSProperties, useMemo } from "react";
+import cls from './Avatar.module.scss';
+import { CSSProperties, useMemo } from 'react';
 
-import DefaultImg from "./Avatar.jpg";
-import { AppImage } from "../AppImage";
-import { Icon } from "../Icon";
+import DefaultImg from './Avatar.jpg';
+import { AppImage } from '../AppImage';
+import { Icon } from '../Icon';
 
-import ProfileDefaultIcon from "../../assets/icons/profile-default-icon.svg";
-import { Skeleton } from "../Skeleton";
+import ProfileDefaultIcon from '../../assets/icons/profile-default-icon.svg';
+import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
     className?: string;
@@ -18,12 +18,7 @@ interface AvatarProps {
 }
 
 export const Avatar = (props: AvatarProps) => {
-    const {
-        className,
-        src = "",
-        size = 100,
-        alt,
-    } = props;
+    const { className, src = '', size = 100, alt } = props;
 
     const imageOrDefault = src.length > 0 ? src : DefaultImg;
 
@@ -33,11 +28,13 @@ export const Avatar = (props: AvatarProps) => {
         return {
             width: size,
             height: size,
-        }
+        };
     }, [size]);
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
-    const errorFallback = <Icon width={size} height={size} Svg={ProfileDefaultIcon} />;
+    const errorFallback = (
+        <Icon width={size} height={size} Svg={ProfileDefaultIcon} />
+    );
 
     return (
         <AppImage

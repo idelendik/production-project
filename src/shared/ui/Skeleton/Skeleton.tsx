@@ -1,7 +1,7 @@
-import { CSSProperties, memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { CSSProperties, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Skeleton.module.scss"
+import cls from './Skeleton.module.scss';
 
 interface SkeletonProps {
     className?: string;
@@ -11,12 +11,7 @@ interface SkeletonProps {
 }
 
 export const Skeleton = memo((props: SkeletonProps) => {
-    const {
-        className,
-        width,
-        height,
-        border
-    } = props;
+    const { className, width, height, border } = props;
 
     const styles: CSSProperties = {
         width,
@@ -28,11 +23,9 @@ export const Skeleton = memo((props: SkeletonProps) => {
         <div
             className={classNames(cls.Skeleton, {}, [className])}
             style={styles}
-        >
-
-        </div>
+        ></div>
     );
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-Skeleton.displayName = "Skeleton"
+Skeleton.displayName = 'Skeleton';

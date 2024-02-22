@@ -1,17 +1,17 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Sidebar.module.scss";
-import { memo, useMemo, useState } from "react";
-import { ThemeSwitcher } from "@/features/ThemeSwitcher";
-import { LangSwitcher } from "@/features/LangSwitcher";
-import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button";
-import { SidebarItem } from "../SidebarItem/SidebarItem";
-import { getSidebarItems } from "../../model/selectors/getSidebarItems";
-import { useSelector } from "react-redux";
-import { VStack } from "@/shared/ui/Stack";
+import cls from './Sidebar.module.scss';
+import { memo, useMemo, useState } from 'react';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSelector } from 'react-redux';
+import { VStack } from '@/shared/ui/Stack';
 
 interface SidebarProps {
-    className?: string
+    className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
@@ -19,14 +19,27 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
     const sidebarItemsList = useSelector(getSidebarItems);
 
-    const onToggle = () => setCollapsed(prev => !prev);
+    const onToggle = () => setCollapsed((prev) => !prev);
 
-    const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-        <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-    )), [collapsed, sidebarItemsList]);
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
 
     return (
-        <aside data-testid="sidebar" className={classNames(cls.Sidebar,{ [cls.collapsed]: collapsed }, [className])}>
+        <aside
+            data-testid="sidebar"
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
@@ -35,7 +48,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 square
                 size={ButtonSize.L}
             >
-                {collapsed ? ">" : "<"}
+                {collapsed ? '>' : '<'}
             </Button>
 
             <VStack role="navigation" className={cls.items} gap="8">
@@ -51,4 +64,4 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-Sidebar.displayName = "Sidebar";
+Sidebar.displayName = 'Sidebar';

@@ -1,14 +1,14 @@
-import { memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./ArticleViewSelector.module.scss"
+import cls from './ArticleViewSelector.module.scss';
 
-import ListIcon from "@/shared/assets/icons/list-icon.svg";
-import GridIcon from "@/shared/assets/icons/grid-icon.svg";
-import { Button } from "@/shared/ui/Button";
-import { Icon } from "@/shared/ui/Icon";
-import { ButtonTheme } from "@/shared/ui/Button";
-import { ArticleView } from "@/entities/Article";
+import ListIcon from '@/shared/assets/icons/list-icon.svg';
+import GridIcon from '@/shared/assets/icons/grid-icon.svg';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { ButtonTheme } from '@/shared/ui/Button';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
     className?: string;
@@ -24,7 +24,7 @@ const viewTypes = [
     {
         view: ArticleView.BIG,
         icon: ListIcon,
-    }
+    },
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
@@ -33,7 +33,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     const onClick = (newView: ArticleView) => {
         return () => {
             onViewClick?.(newView);
-        }
+        };
     };
 
     return (
@@ -44,16 +44,18 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                         onClick={onClick(viewType.view)}
                         key={idx}
                         theme={ButtonTheme.CLEAR}
-                        className={classNames("", { [cls.selected]: viewType.view === view })}
+                        className={classNames('', {
+                            [cls.selected]: viewType.view === view,
+                        })}
                         disabled={viewType.view === view}
                     >
                         <Icon Svg={viewType.icon} className={cls.icon} />
                     </Button>
-                )
+                );
             })}
         </div>
     );
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-ArticleViewSelector.displayName = "ArticleViewSelector"
+ArticleViewSelector.displayName = 'ArticleViewSelector';

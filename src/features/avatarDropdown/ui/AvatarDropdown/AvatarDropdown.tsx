@@ -1,16 +1,21 @@
-import { memo, useCallback } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { memo, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./AvatarDropdown.module.scss"
-import { Avatar } from "@/shared/ui/Avatar";
-import { Dropdown } from "@/shared/ui/Popups";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
-import { useTranslation } from "react-i18next";
-import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
+import cls from './AvatarDropdown.module.scss';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from '@/entities/User';
+import { useTranslation } from 'react-i18next';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
-    className?: string
+    className?: string;
 }
 
 export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
@@ -36,9 +41,11 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         <Dropdown
             className={classNames(cls.AvatarDropdown, {}, [className])}
             items={[
-                ...(isAdminPanelAvailable ? [{ content: t("admin"), href: getRouteAdmin() }] : []),
-                { content: t("Profile"), href: getRouteProfile(authData.id) },
-                { content: t("Logout"), onClick: onLogout },
+                ...(isAdminPanelAvailable
+                    ? [{ content: t('admin'), href: getRouteAdmin() }]
+                    : []),
+                { content: t('Profile'), href: getRouteProfile(authData.id) },
+                { content: t('Logout'), onClick: onLogout },
             ]}
             trigger={<Avatar size={30} src={authData.avatar} />}
             direction="bottom left"
@@ -47,4 +54,4 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-AvatarDropdown.displayName = "AvatarDropdown"
+AvatarDropdown.displayName = 'AvatarDropdown';

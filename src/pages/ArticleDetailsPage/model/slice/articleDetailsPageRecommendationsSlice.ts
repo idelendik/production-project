@@ -1,27 +1,31 @@
-import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import { Article } from "@/entities/Article";
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { ArticleDetailsRecommendationsSchema } from "../types/ArticleDetailsRecommendationsSchema";
-import {
-    fetchArticleRecommendations
-} from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { Article } from '@/entities/Article';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
-export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState()
-);
+export const getArticleRecommendations =
+    recommendationsAdapter.getSelectors<StateSchema>(
+        (state) =>
+            state.articleDetailsPage?.recommendations ||
+            recommendationsAdapter.getInitialState(),
+    );
 
 const articleDetailsPageRecommendationsSlice = createSlice({
-    name: "articleDetailsPageRecommendationsSlice",
-    initialState: recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {}
-    }),
+    name: 'articleDetailsPageRecommendationsSlice',
+    initialState:
+        recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+            {
+                isLoading: false,
+                error: undefined,
+                ids: [],
+                entities: {},
+            },
+        ),
     reducers: {},
     extraReducers: (builder) => {
         builder
@@ -37,10 +41,9 @@ const articleDetailsPageRecommendationsSlice = createSlice({
             .addCase(fetchArticleRecommendations.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-            })
-    }
+            });
+    },
 });
 
-export const {
-    reducer: articleDetailsPageRecommendationsReducer
-} = articleDetailsPageRecommendationsSlice;
+export const { reducer: articleDetailsPageRecommendationsReducer } =
+    articleDetailsPageRecommendationsSlice;

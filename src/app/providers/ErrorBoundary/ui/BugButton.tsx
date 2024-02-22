@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // This component is for testing purpose only!
 export const BugButton = () => {
@@ -9,7 +9,7 @@ export const BugButton = () => {
 
     const throwError = () => {
         setError(true);
-    }
+    };
 
     useEffect(() => {
         if (error) {
@@ -17,7 +17,5 @@ export const BugButton = () => {
         }
     }, [error]);
 
-    return (
-        <button onClick={throwError} >{t("Throw an error")}</button>
-    );
+    return <button onClick={throwError}>{t('Throw an error')}</button>;
 };

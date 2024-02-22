@@ -1,18 +1,19 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { Profile } from "@/entities/Profile";
-import { Currency } from "@/entities/Currency";
-import { Country } from "@/entities/Country";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Profile } from '@/entities/Profile';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 
-export const defaultProfile: Profile= {
-    id: "",
-    firstname: "",
-    lastname: "",
+export const defaultProfile: Profile = {
+    id: '',
+    firstname: '',
+    lastname: '',
     age: -1,
-    avatar: "",
-    city: "",
+    avatar: '',
+    city: '',
     country: Country.Belarus,
     currency: Currency.BYN,
-    username: ""
+    username: '',
 };
 
-export const getProfileData = (state: StateSchema): Profile => state?.profile?.data || defaultProfile;
+export const getProfileData = (state: StateSchema): Profile =>
+    state?.profile?.data || defaultProfile;

@@ -1,15 +1,15 @@
 {
-  "Main": "Главная",
-  "About": "О сайте",
-  "Profile": "Профиль",
-  "Loading": "Загрузка...",
-  "Page not found": "Страница не найдена",
-  "An unexpected error has happened": "Произошла непредвиденная ошибка",
-  "Reload the page": "Перезагрузить страницу",
-  "Login": "Войти",
-  "Logout": "Выйти",
-  "Username": "Имя пользователя",
-  "Password": "Пароль",
-  "auth_form_title": "Форма авторизации",
-  "incorrect_username_password": "Неверное имя или пароль"
+    "Main": "Главная",
+    "About": "О сайте",
+    "Profile": "Профиль",
+    "Loading": "Загрузка...",
+    "Page not found": "Страница не найдена",
+    "An unexpected error has happened": "Произошла непредвиденная ошибка",
+    "Reload the page": "Перезагрузить страницу",
+    "Login": "Войти",
+    "Logout": "Выйти",
+    "Username": "Имя пользователя",
+    "Password": "Пароль",
+    "auth_form_title": "Форма авторизации",
+    "incorrect_username_password": "Неверное имя или пароль"
 }

@@ -1,15 +1,15 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { LoginSchema } from "../types/loginSchema";
-import { loginByUsername } from "../services/loginByUsername/loginByUsername";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LoginSchema } from '../types/loginSchema';
+import { loginByUsername } from '../services/loginByUsername/loginByUsername';
 
 const initialState: LoginSchema = {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
     isLoading: false,
-}
+};
 
 export const loginSlice = createSlice({
-    name: "login",
+    name: 'login',
     initialState,
     reducers: {
         setUsername: (state, action: PayloadAction<string>) => {
@@ -19,8 +19,8 @@ export const loginSlice = createSlice({
             state.password = action.payload;
         },
         clearError: (state) => {
-            state.error = "";
-        }
+            state.error = '';
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -34,8 +34,8 @@ export const loginSlice = createSlice({
             .addCase(loginByUsername.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-            })
-    }
+            });
+    },
 });
 
 export const { actions: loginActions } = loginSlice;

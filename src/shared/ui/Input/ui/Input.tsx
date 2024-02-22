@@ -1,9 +1,20 @@
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Input.module.scss"
-import { ChangeEvent, InputHTMLAttributes, memo, MouseEvent, useEffect, useRef, useState } from "react";
+import cls from './Input.module.scss';
+import {
+    ChangeEvent,
+    InputHTMLAttributes,
+    memo,
+    MouseEvent,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "readOnly">
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>;
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -21,7 +32,7 @@ export const Input = memo((props: InputProps) => {
         autofocus = false,
         onChange,
         readonly,
-        type = "text",
+        type = 'text',
         ...otherProps
     } = props;
 
@@ -41,32 +52,32 @@ export const Input = memo((props: InputProps) => {
 
     const onBlur = () => {
         setIsFocused(false);
-    }
+    };
 
     const onFocus = () => {
         setIsFocused(true);
-    }
+    };
 
     const onSelect = (e: MouseEvent<HTMLInputElement>) => {
-        setCaretPosition((e.target as HTMLInputElement)?.selectionStart || caretPosition);
-    }
+        setCaretPosition(
+            (e.target as HTMLInputElement)?.selectionStart || caretPosition,
+        );
+    };
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
         setCaretPosition(e.target.value.length);
-    }
+    };
 
     const mods: Mods = {
         [cls.isFocused]: isFocused,
         [cls.readonly]: readonly,
-    }
+    };
 
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
-                <div className={cls.placeholder}>
-                    {`${placeholder}>`}
-                </div>
+                <div className={cls.placeholder}>{`${placeholder}>`}</div>
             )}
             <div className={cls.caretWrapper}>
                 <input
@@ -84,7 +95,10 @@ export const Input = memo((props: InputProps) => {
                     {...otherProps}
                 />
                 {isCaretVisible && (
-                    <span style={{ left: `${caretPosition * 9}px` }} className={cls.caret}></span>
+                    <span
+                        style={{ left: `${caretPosition * 9}px` }}
+                        className={cls.caret}
+                    ></span>
                 )}
             </div>
         </div>
@@ -92,4 +106,4 @@ export const Input = memo((props: InputProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-Input.displayName = "Input";
+Input.displayName = 'Input';

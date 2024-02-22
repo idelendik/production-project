@@ -1,11 +1,11 @@
 {
-  "id": "1",
-  "firstname": "TestUser",
-  "lastname": "T.U.",
-  "age": 32,
-  "currency": "RUB",
-  "country": "Russia",
-  "city": "Moscow",
-  "username": "testuser",
-  "avatar": "https://avatars.mds.yandex.net/i?id=32ab00c547e3b2e69591c0fab6ef1973ccde787b-9182360-images-thumbs&n=13"
+    "id": "1",
+    "firstname": "TestUser",
+    "lastname": "T.U.",
+    "age": 32,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "testuser",
+    "avatar": "https://avatars.mds.yandex.net/i?id=32ab00c547e3b2e69591c0fab6ef1973ccde787b-9182360-images-thumbs&n=13"
 }

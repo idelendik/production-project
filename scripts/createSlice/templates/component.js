@@ -1,4 +1,4 @@
-const { capitalize } = require("../helpers");
+const { capitalize } = require('../helpers');
 module.exports = (componentName) => {
     const capitalizedName = capitalize(componentName);
 

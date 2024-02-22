@@ -1,17 +1,19 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppImage } from "./AppImage";
+import { AppImage } from './AppImage';
 
 export default {
-    title: "unspecified/AppImage",
+    title: 'unspecified/AppImage',
     component: AppImage,
     argTypes: {
-        backgroundColor: { control: "color" },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof AppImage>;
 
-const Template: ComponentStory<typeof AppImage> = (args) => <AppImage {...args} />;
+const Template: ComponentStory<typeof AppImage> = (args) => (
+    <AppImage {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

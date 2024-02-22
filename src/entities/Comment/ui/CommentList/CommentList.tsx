@@ -1,11 +1,11 @@
-import { memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Comment } from "../../model/types/comment";
+import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Comment } from '../../model/types/comment';
 
-import { Text } from "@/shared/ui/Text";
-import { useTranslation } from "react-i18next";
-import { CommentCard } from "../CommentCard/CommentCard";
-import { VStack } from "@/shared/ui/Stack";
+import { Text } from '@/shared/ui/Text';
+import { useTranslation } from 'react-i18next';
+import { CommentCard } from '../CommentCard/CommentCard';
+import { VStack } from '@/shared/ui/Stack';
 
 interface CommentListProps {
     className?: string;
@@ -13,28 +13,41 @@ interface CommentListProps {
     isLoading?: boolean;
 }
 
-export const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => {
-    const { t } = useTranslation();
+export const CommentList = memo(
+    ({ className, comments, isLoading }: CommentListProps) => {
+        const { t } = useTranslation();
 
-    if(isLoading) {
+        if (isLoading) {
+            return (
+                <VStack
+                    gap="16"
+                    max
+                    className={classNames('', {}, [className])}
+                >
+                    <CommentCard isLoading />
+                    <CommentCard isLoading />
+                    <CommentCard isLoading />
+                </VStack>
+            );
+        }
+
         return (
-            <VStack gap="16" max className={classNames("", {}, [className])}>
-                <CommentCard isLoading />
-                <CommentCard isLoading />
-                <CommentCard isLoading />
+            <VStack gap="16" max className={classNames('', {}, [className])}>
+                {comments?.length ? (
+                    comments.map((comment) => (
+                        <CommentCard
+                            key={comment.id}
+                            isLoading={isLoading}
+                            comment={comment}
+                        />
+                    ))
+                ) : (
+                    <Text text={t('no_comments_found')} />
+                )}
             </VStack>
-        )
-    }
-
-    return (
-        <VStack gap="16" max className={classNames("", {}, [className])}>
-            {comments?.length
-                ? comments.map(comment => <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />)
-                : <Text text={t("no_comments_found")} />
-            }
-        </VStack>
-    );
-});
+        );
+    },
+);
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-CommentList.displayName = "CommentList"
+CommentList.displayName = 'CommentList';

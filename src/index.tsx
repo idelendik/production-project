@@ -1,20 +1,19 @@
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client';
 
-import { BrowserRouter } from "react-router-dom";
-import { App } from "@/app/App";
-import { ThemeProvider } from "@/app/providers/ThemeProvider";
+import { BrowserRouter } from 'react-router-dom';
+import { App } from '@/app/App';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
-import "@/shared/config/i18n/i18n";
-import { ErrorBoundary } from "@/app/providers/ErrorBoundary";
+import '@/shared/config/i18n/i18n';
+import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 
-import "@/app/styles/index.scss";
-import { StoreProvider } from "@/app/providers/StoreProvider";
+import '@/app/styles/index.scss';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 
-
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 
 if (!container) {
-    throw new Error("Container root is not found. React app cannot be mounted");
+    throw new Error('Container root is not found. React app cannot be mounted');
 }
 
 const root = createRoot(container);
@@ -28,6 +27,6 @@ root.render(
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>
-    </BrowserRouter>
+    </BrowserRouter>,
 );
-export { Theme } from "@/shared/const/theme";
+export { Theme } from '@/shared/const/theme';

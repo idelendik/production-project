@@ -1,4 +1,10 @@
-import { MutableRefObject, useCallback, useEffect, useRef, useState } from "react";
+import {
+    MutableRefObject,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 
 interface KeyboardEvent {
     key: string;
@@ -11,24 +17,22 @@ interface useModalProps {
 }
 
 export function useModal(props: useModalProps) {
-    const {
-        onClose,
-        isOpen,
-        animationDelay
-    } = props;
+    const { onClose, isOpen, animationDelay } = props;
 
     const [isMounted, setIsMounted] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
 
     useEffect(() => {
-        if(isOpen) {
+        if (isOpen) {
             setIsMounted(true);
         }
 
         return () => {
             setIsMounted(false);
-        }
+        };
     }, [isOpen]);
 
     const close = useCallback(() => {
@@ -41,26 +45,29 @@ export function useModal(props: useModalProps) {
         }
     }, [animationDelay, onClose]);
 
-    const onKeyDown = useCallback((e: KeyboardEvent): void => {
-        if (e.key === "Escape") {
-            close();
-        }
-    }, [close]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent): void => {
+            if (e.key === 'Escape') {
+                close();
+            }
+        },
+        [close],
+    );
 
     useEffect(() => {
         if (isOpen) {
-            window.addEventListener("keydown", onKeyDown);
+            window.addEventListener('keydown', onKeyDown);
         }
 
         return () => {
             clearTimeout(timerRef.current);
-            window.removeEventListener("keydown", onKeyDown);
-        }
+            window.removeEventListener('keydown', onKeyDown);
+        };
     }, [isOpen, onKeyDown]);
 
     return {
         isClosing,
         isMounted,
-        close
-    }
+        close,
+    };
 }

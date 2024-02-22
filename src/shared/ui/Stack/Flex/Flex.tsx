@@ -1,12 +1,12 @@
-import { HTMLAttributes, memo, ReactNode } from "react";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { HTMLAttributes, memo, ReactNode } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Flex.module.scss"
+import cls from './Flex.module.scss';
 
-export type FlexJustify = "start" | "center" | "end" | "between" ;
-export type FlexAlign = "start" | "center" | "end";
-export type FlexDirection = "row" | "column";
-export type FlexGap = "4" | "8" | "16" | "32";
+export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexDirection = 'row' | 'column';
+export type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,
@@ -30,8 +30,8 @@ const gapClasses: Record<FlexGap, string> = {
     4: cls.gap4,
     8: cls.gap8,
     16: cls.gap16,
-    32: cls.gap32
-}
+    32: cls.gap32,
+};
 
 type DivProps = HTMLAttributes<HTMLDivElement>;
 
@@ -49,9 +49,9 @@ export const Flex = memo((props: FlexProps) => {
     const {
         className,
         children,
-        justify = "start",
-        align= "center",
-        direction= "row",
+        justify = 'start',
+        align = 'center',
+        direction = 'row',
         gap,
         max,
         ...otherProps
@@ -62,12 +62,12 @@ export const Flex = memo((props: FlexProps) => {
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
-        gap && gapClasses[gap]
-    ]
+        gap && gapClasses[gap],
+    ];
 
     const mods: Mods = {
         [cls.max]: max,
-    }
+    };
 
     return (
         <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
@@ -77,4 +77,4 @@ export const Flex = memo((props: FlexProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-Flex.displayName = "Flex"
+Flex.displayName = 'Flex';

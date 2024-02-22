@@ -1,10 +1,10 @@
 {
-  "your_firstname": "Ваше имя",
-  "your_lastname": "Ваша фамилия",
-  "your_age": "Ваш возраст",
-  "your_city": "Ваш город",
-  "your_username": "Ваш никнейм",
-  "your_avatar": "Ваш аватар",
-  "error_title": "Произошла ошибка при загрузке профиля",
-  "error_text": "Попробуйте обновить страницу"
+    "your_firstname": "Ваше имя",
+    "your_lastname": "Ваша фамилия",
+    "your_age": "Ваш возраст",
+    "your_city": "Ваш город",
+    "your_username": "Ваш никнейм",
+    "your_avatar": "Ваш аватар",
+    "error_title": "Произошла ошибка при загрузке профиля",
+    "error_text": "Попробуйте обновить страницу"
 }

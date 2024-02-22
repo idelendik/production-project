@@ -1,11 +1,11 @@
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-import cls from "./Modal.module.scss"
-import React, { ReactNode } from "react";
-import { Portal } from "../Portal/Portal";
-import { Overlay } from "../Overlay/Overlay";
-import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
-import { useModal } from "@/shared/lib/hooks/useModal/useModal";
+import cls from './Modal.module.scss';
+import React, { ReactNode } from 'react';
+import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 
 export interface ModalProps {
     className?: string;
@@ -16,26 +16,20 @@ export interface ModalProps {
 }
 
 export const Modal = (props: ModalProps) => {
-    const {
-        className,
-        children,
+    const { className, children, isOpen, onClose, lazy } = props;
+
+    const { close, isClosing, isMounted } = useModal({
+        animationDelay: 300,
         isOpen,
         onClose,
-        lazy,
-    } = props;
-
-    const {
-        close,
-        isClosing,
-        isMounted
-    } = useModal({ animationDelay: 300, isOpen, onClose });
+    });
 
     const { theme } = useTheme();
 
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-    }
+    };
 
     if (lazy && !isMounted) {
         return null;
@@ -43,11 +37,15 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className, theme, "app_modal"])}>
+            <div
+                className={classNames(cls.Modal, mods, [
+                    className,
+                    theme,
+                    'app_modal',
+                ])}
+            >
                 <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

@@ -1,10 +1,10 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./CountrySelect.module.scss";
-import { memo, useCallback } from "react";
-import { Country } from "../../model/types/country";
-import { useTranslation } from "react-i18next";
-import { ListBox } from "@/shared/ui/Popups";
+import cls from './CountrySelect.module.scss';
+import { memo, useCallback } from 'react';
+import { Country } from '../../model/types/country';
+import { useTranslation } from 'react-i18next';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CountrySelectProps {
     className?: string;
@@ -18,29 +18,27 @@ const options = [
     { value: Country.China, content: Country.China },
     { value: Country.Russia, content: Country.Russia },
     { value: Country.India, content: Country.India },
-]
+];
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-    const {
-        className,
-        value,
-        readonly,
-        onChange,
-    } = props;
+    const { className, value, readonly, onChange } = props;
 
-    const { t } = useTranslation("countrySelect");
+    const { t } = useTranslation('countrySelect');
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country)
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox
-            className={classNames(cls.CurrencySelect,{}, [className])}
+            className={classNames(cls.CurrencySelect, {}, [className])}
             items={options}
             value={value}
-            defaultValue={t("select_country")}
-            label={`${t("your_country")}>`}
+            defaultValue={t('select_country')}
+            label={`${t('your_country')}>`}
             onChange={onChangeHandler}
             readonly={readonly}
         />
@@ -48,4 +46,4 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
 });
 
 // Fix for memo - ESLint: Component definition is missing display name(react/display-name)
-CountrySelect.displayName = "CountrySelect";
+CountrySelect.displayName = 'CountrySelect';

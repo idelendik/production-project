@@ -1,14 +1,14 @@
-import { Fragment, ReactNode } from "react"
-import { Listbox as HListBox } from "@headlessui/react"
+import { Fragment, ReactNode } from 'react';
+import { Listbox as HListBox } from '@headlessui/react';
 
-import cls from "./ListBox.module.scss";
-import popupCls from "../../styles/popup.module.scss";
+import cls from './ListBox.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "../../../Button";
-import { DropdownDirection } from "@/shared/types/ui";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '../../../Button';
+import { DropdownDirection } from '@/shared/types/ui';
 
-import { mapDirectionClass } from "../../styles/consts";
+import { mapDirectionClass } from '../../styles/consts';
 
 interface ListBoxItem {
     value: string;
@@ -35,8 +35,8 @@ export function ListBox(props: ListBoxProps) {
         defaultValue,
         label,
         readonly,
-        direction = "bottom right",
-        onChange
+        direction = 'bottom right',
+        onChange,
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction]];
@@ -45,19 +45,30 @@ export function ListBox(props: ListBoxProps) {
         <HListBox
             disabled={readonly}
             as="div"
-            className={classNames(cls.ListBox, { [cls.readonly]: readonly }, [className, popupCls.popup])}
+            className={classNames(cls.ListBox, { [cls.readonly]: readonly }, [
+                className,
+                popupCls.popup,
+            ])}
             value={value}
             onChange={onChange}
         >
-            {label && <HListBox.Label className={cls.label}>{label}</HListBox.Label>}
+            {label && (
+                <HListBox.Label className={cls.label}>{label}</HListBox.Label>
+            )}
             <div className={cls.control}>
-                <HListBox.Button as="div" className={classNames("", {}, [popupCls.trigger, cls.trigger])}>
-                    <Button>
-                        {value ?? defaultValue}
-                    </Button>
+                <HListBox.Button
+                    as="div"
+                    className={classNames('', {}, [
+                        popupCls.trigger,
+                        cls.trigger,
+                    ])}
+                >
+                    <Button>{value ?? defaultValue}</Button>
                 </HListBox.Button>
 
-                <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
+                <HListBox.Options
+                    className={classNames(cls.options, {}, optionsClasses)}
+                >
                     {items?.map((item) => (
                         <HListBox.Option
                             key={item.value}
@@ -67,12 +78,16 @@ export function ListBox(props: ListBoxProps) {
                         >
                             {({ active, selected }) => (
                                 <li
-                                    className={classNames(cls.item, {
-                                        [popupCls.active]: active,
-                                        [popupCls.disabled]: item.disabled
-                                    }, [])}
+                                    className={classNames(
+                                        cls.item,
+                                        {
+                                            [popupCls.active]: active,
+                                            [popupCls.disabled]: item.disabled,
+                                        },
+                                        [],
+                                    )}
                                 >
-                                    {selected && "!!!"}
+                                    {selected && '!!!'}
                                     {item.content}
                                 </li>
                             )}
@@ -81,5 +96,5 @@ export function ListBox(props: ListBoxProps) {
                 </HListBox.Options>
             </div>
         </HListBox>
-    )
+    );
 }

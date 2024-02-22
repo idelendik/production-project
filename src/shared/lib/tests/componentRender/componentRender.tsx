@@ -1,13 +1,13 @@
-import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { I18nextProvider } from "react-i18next";
-import i18nForTests from "@/shared/config/i18n/i18nForTests";
-import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { ReactNode } from "react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeProvider } from "@/app/providers/ThemeProvider";
-import "@/app/styles/index.scss";
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { I18nextProvider } from 'react-i18next';
+import i18nForTests from '@/shared/config/i18n/i18nForTests';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { ReducersMapObject } from '@reduxjs/toolkit';
+import { ReactNode } from 'react';
+import { Theme } from '@/shared/const/theme';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import '@/app/styles/index.scss';
 
 export interface componentRenderOptions {
     route?: string;
@@ -24,7 +24,7 @@ interface TestProviderProps {
 export function TestProvider(props: TestProviderProps) {
     const { children, options = {} } = props;
     const {
-        route = "/",
+        route = '/',
         initialState,
         asyncReducers,
         theme = Theme.LIGHT,
@@ -32,19 +32,23 @@ export function TestProvider(props: TestProviderProps) {
 
     return (
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
+            <StoreProvider
+                asyncReducers={asyncReducers}
+                initialState={initialState}
+            >
                 <I18nextProvider i18n={i18nForTests}>
                     <ThemeProvider initialTheme={theme}>
-                        <div className={`app ${theme}`}>
-                            {children}
-                        </div>
+                        <div className={`app ${theme}`}>{children}</div>
                     </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
         </MemoryRouter>
-    )
+    );
 }
 
-export function componentRender(component: React.ReactNode, options: componentRenderOptions = {}) {
+export function componentRender(
+    component: React.ReactNode,
+    options: componentRenderOptions = {},
+) {
     return render(<TestProvider options={options}>{component}</TestProvider>);
 }

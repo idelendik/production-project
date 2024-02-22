@@ -1,13 +1,13 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from "./ArticleList.module.scss"
-import { Article } from "../../model/types/article";
-import { ArticleListItem } from "../../ui/ArticleListItem/ArticleListItem";
-import { ArticleListItemSkeleton } from "../ArticleListItem/AtricleListItemSkeleton";
-import { useTranslation } from "react-i18next";
-import { Text, TextSize } from "@/shared/ui/Text";
-import { HTMLAttributeAnchorTarget } from "react";
-import { ArticleView } from "../../model/consts/consts";
+import cls from './ArticleList.module.scss';
+import { Article } from '../../model/types/article';
+import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItem/AtricleListItemSkeleton';
+import { useTranslation } from 'react-i18next';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { HTMLAttributeAnchorTarget } from 'react';
+import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleListProps {
     className?: string;
@@ -18,8 +18,16 @@ interface ArticleListProps {
 }
 
 const getSkeletons = (view: ArticleView) => {
-    return new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((item, idx) => <ArticleListItemSkeleton className={cls.card} view={view} key={idx} />);
-}
+    return new Array(view === ArticleView.SMALL ? 9 : 3)
+        .fill(0)
+        .map((item, idx) => (
+            <ArticleListItemSkeleton
+                className={cls.card}
+                view={view}
+                key={idx}
+            />
+        ));
+};
 
 export const ArticleList = (props: ArticleListProps) => {
     const {
@@ -34,29 +42,32 @@ export const ArticleList = (props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList,{}, [cls[view], className])}>
-                <Text size={TextSize.L} title={t("no_articles_found")} />
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    cls[view],
+                    className,
+                ])}
+            >
+                <Text size={TextSize.L} title={t('no_articles_found')} />
             </div>
-        )
+        );
     }
 
     return (
         // TODO: use 'react-window' or even 'react-virtuozo' instead of react-virtualized
         <div
             data-testid="ArticleList"
-            className={classNames(cls.ArticleList,{}, [cls[view], className])}
+            className={classNames(cls.ArticleList, {}, [cls[view], className])}
         >
-            {
-                articles.map(article => (
-                    <ArticleListItem
-                        key={article.id}
-                        article={article}
-                        view={view}
-                        target={target}
-                        className={cls.card}
-                    />
-                ))
-            }
+            {articles.map((article) => (
+                <ArticleListItem
+                    key={article.id}
+                    article={article}
+                    view={view}
+                    target={target}
+                    className={cls.card}
+                />
+            ))}
             {isLoading && getSkeletons(view)}
         </div>
     );
