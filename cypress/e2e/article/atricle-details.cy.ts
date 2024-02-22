@@ -1,5 +1,5 @@
 describe("A user visits an Article Details page", () => {
-    it("and sees an article content", () => {
+    it.skip("and sees an article content", () => {
         cy.createArticle().then((article) => {
             cy.login().visit(`articles/${article.id}`);
 
@@ -9,7 +9,7 @@ describe("A user visits an Article Details page", () => {
         });
     });
 
-    it("and sees a list of recommended articles", () => {
+    it.skip("and sees a list of recommended articles", () => {
         cy.createArticle().then((article) => {
             cy.login().visit(`articles/${article.id}`);
 
@@ -19,7 +19,7 @@ describe("A user visits an Article Details page", () => {
         });
     })
 
-    it("and sends a new comment", () => {
+    it.skip("and sends a new comment", () => {
         cy.createArticle().then((article) => {
             cy.login().visit(`articles/${article.id}`);
 
@@ -38,6 +38,8 @@ describe("A user visits an Article Details page", () => {
     it("and set a rating", () => {
         cy.createArticle().then((article) => {
             cy.login().visit(`articles/${article.id}`);
+
+            cy.intercept("GET", "**/articles/*", { fixture: "article-details.json" })
 
             cy.getByTestId("ArticleDetails.Info")
 

@@ -8,7 +8,19 @@ describe("A user opens Articles page", () => {
         })
     })
 
-    it("and change list sorting", () => {
+    it("and articles load successfully (fixtures)", () => {
+        cy.login().then(()=> {
+            cy.visit("/articles");
+
+            cy.intercept("GET", "**/articles?*", { fixture: "articles.json" })
+
+            cy.getByTestId("ArticleList").should("exist");
+            cy.getByTestId("ArticleListItem").should("have.length.greaterThan", 3);
+        })
+
+    })
+
+    it.skip("and change list sorting", () => {
         //data-testid="ArticlesPageFilters.ArticleSortSelector"
     })
 
