@@ -770,6 +770,7 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {},
             "avatar": "https://img3.wallspic.com/crops/5/1/8/3/6/163815/163815-cyberpunk-vaporwave-synthwave_art-synthwave-art-1920x1080.jpg"
         },
         {
@@ -777,6 +778,10 @@
             "username": "guest",
             "password": "1233",
             "roles": ["USER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": ""
         },
         {
