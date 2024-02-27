@@ -379,7 +379,7 @@
       "id": "10",
       "title": "Doge",
       "subtitle": "What's new in 2023?",
-      "img": "https://cdn.pixabay.com/photo/2023/09/19/12/34/dog-8262506_1280.jpg",
+      "img": "https://cdn.pixabay.com/photo/2023/09/19/12/34/dog-8262506_1280.jpgf",
       "views": 1022,
       "createdAt": "25.01.2022",
       "userId": "1",
@@ -860,9 +860,10 @@
         "isCounterEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_normal_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": ""
     },
