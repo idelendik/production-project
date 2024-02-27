@@ -5,9 +5,9 @@ import cls from './ArticleViewSelector.module.scss';
 
 import ListIcon from '@/shared/assets/icons/list-icon.svg';
 import GridIcon from '@/shared/assets/icons/grid-icon.svg';
-import { Button } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
-import { ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {

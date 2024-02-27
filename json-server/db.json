@@ -829,6 +829,12 @@
       "userId": "1",
       "text": "asd",
       "id": "rBLQF18"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "asd",
+      "id": "Ysnt4vf"
     }
   ],
   "users": [
@@ -860,7 +866,7 @@
         "isCounterEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_normal_theme",
+        "theme": "app_orange_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false,
         "isArticlesPageWasOpened": true

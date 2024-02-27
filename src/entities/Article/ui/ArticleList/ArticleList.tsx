@@ -5,7 +5,7 @@ import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/AtricleListItemSkeleton';
 import { useTranslation } from 'react-i18next';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { HTMLAttributeAnchorTarget } from 'react';
 import { ArticleView } from '../../model/consts/consts';
 

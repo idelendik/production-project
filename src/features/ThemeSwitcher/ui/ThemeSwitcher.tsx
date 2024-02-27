@@ -4,8 +4,7 @@ import cls from './ThemeSwitcher.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 import ThemeSwitcherIcon from '@/shared/assets/icons/theme-switcher.svg';
-import { Button } from '@/shared/ui/Button';
-import { ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { memo, useCallback } from 'react';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
