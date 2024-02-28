@@ -4,16 +4,14 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLogo.module.scss';
 
 import LogoIcon from '../../../assets/icons/logo-icon.svg';
-import { HStack } from '../Stack';
+import { HStack } from '../../deprecated/Stack';
 
 interface AppLogoProps {
     className?: string;
+    size?: number;
 }
 
-/**
- * @deprecated
- */
-export const AppLogo = memo(({ className }: AppLogoProps) => {
+export const AppLogo = memo(({ className, size = 50 }: AppLogoProps) => {
     return (
         <HStack
             max
@@ -22,7 +20,12 @@ export const AppLogo = memo(({ className }: AppLogoProps) => {
         >
             <div className={cls.gradientBig}></div>
             <div className={cls.gradientSmall}></div>
-            <LogoIcon className={cls.AppLogo} />
+            <LogoIcon
+                width={size}
+                height={size}
+                color={'black'}
+                className={cls.AppLogo}
+            />
         </HStack>
     );
 });

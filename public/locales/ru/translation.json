@@ -11,5 +11,7 @@
     "Username": "Имя пользователя",
     "Password": "Пароль",
     "auth_form_title": "Форма авторизации",
-    "incorrect_username_password": "Неверное имя или пароль"
+    "incorrect_username_password": "Неверное имя или пароль",
+    "lang": "Русский",
+    "lang_short": "RU"
 }

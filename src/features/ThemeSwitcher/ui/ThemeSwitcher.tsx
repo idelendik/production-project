@@ -3,11 +3,14 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ThemeSwitcher.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
-import ThemeSwitcherIcon from '@/shared/assets/icons/theme-switcher.svg';
+import ThemeSwitcherIconDeprecated from '@/shared/assets/icons/theme-switcher.svg';
+import ThemeSwitcherIcon from '@/shared/assets/icons/theme-switcher-r.svg';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { memo, useCallback } from 'react';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -24,15 +27,25 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     }, [dispatch, toggleTheme]);
 
     return (
-        <>
-            <Button
-                theme={ButtonTheme.CLEAR}
-                className={classNames(cls.ThemeSwitcher, {}, [className])}
-                onClick={onToggleHandler}
-            >
-                <ThemeSwitcherIcon width="30px" height="30px" />
-            </Button>
-        </>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <Icon
+                    Svg={ThemeSwitcherIcon}
+                    clickable
+                    onClick={onToggleHandler}
+                />
+            }
+            off={
+                <Button
+                    theme={ButtonTheme.CLEAR}
+                    className={classNames(cls.ThemeSwitcher, {}, [className])}
+                    onClick={onToggleHandler}
+                >
+                    <ThemeSwitcherIconDeprecated width="30px" height="30px" />
+                </Button>
+            }
+        />
     );
 });
 

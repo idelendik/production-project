@@ -11,5 +11,7 @@
     "Username": "Username",
     "Password": "Password",
     "auth_form_title": "Authorization form",
-    "incorrect_username_password": "Incorrect username or password"
+    "incorrect_username_password": "Incorrect username or password",
+    "lang": "English",
+    "lang_short": "EN"
 }
