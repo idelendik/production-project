@@ -9,7 +9,7 @@ import { getProfileData } from '../../model/selectors/getProfileData/getProfileD
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 

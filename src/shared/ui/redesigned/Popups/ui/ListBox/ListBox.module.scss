@@ -1,0 +1,31 @@
+.ListBox {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.readonly {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.control {
+    position: relative;
+}
+
+.trigger {
+    display: inline-block;
+}
+
+.options {
+    min-width: 100%;
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px var(--dark-bg-redesigned);
+}
+
+.item {
+    padding: 10px 20px;
+}

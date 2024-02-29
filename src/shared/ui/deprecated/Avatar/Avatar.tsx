@@ -4,7 +4,7 @@ import cls from './Avatar.module.scss';
 import { CSSProperties, useMemo } from 'react';
 
 import DefaultImg from './Avatar.jpg';
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../redesigned/AppImage';
 import { Icon } from '../Icon';
 
 import ProfileDefaultIcon from '../../../assets/icons/profile-default-icon.svg';
