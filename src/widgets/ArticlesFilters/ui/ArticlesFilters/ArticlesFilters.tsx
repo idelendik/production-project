@@ -11,6 +11,9 @@ import { SortOrder } from '@/shared/types/sort';
 import { useTranslation } from 'react-i18next';
 import { Input } from '@/shared/ui/redesigned/Input';
 
+import SearchIcon from '@/shared/assets/icons/search-icon.svg';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+
 interface ArticlesFIltersProps {
     className?: string;
     sort: ArticleSortField;
@@ -49,6 +52,7 @@ export const ArticlesFilters = memo((props: ArticlesFIltersProps) => {
                     placeholder={t('search_input_placeholder')}
                     value={search}
                     onChange={onChangeSearch}
+                    addonLeft={<Icon Svg={SearchIcon} />}
                 />
 
                 <ArticleSortSelector

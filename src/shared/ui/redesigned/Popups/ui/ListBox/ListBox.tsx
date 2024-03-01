@@ -9,6 +9,9 @@ import { Button } from '../../../Button';
 import { DropdownDirection } from '@/shared/types/ui';
 
 import { mapDirectionClass } from '../../styles/consts';
+import { Icon } from '../../../Icon';
+
+import ChevronIcon from '@/shared/assets/icons/chevron-icon.svg';
 
 interface ListBoxItem<T extends string> {
     value: T;
@@ -66,7 +69,12 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                         cls.trigger,
                     ])}
                 >
-                    <Button variant="filled">
+                    <Button
+                        variant="filled"
+                        addonRight={
+                            <Icon Svg={ChevronIcon} width={15} height={15} />
+                        }
+                    >
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>
