@@ -13,5 +13,11 @@
     "auth_form_title": "Authorization form",
     "incorrect_username_password": "Incorrect username or password",
     "lang": "English",
-    "lang_short": "EN"
+    "lang_short": "EN",
+    "sort_by": "Sort by:",
+    "search_input_placeholder": "Search",
+    "articles_all_type":  "All articles",
+    "articles_business_type": "Business",
+    "articles_it_type":  "IT",
+    "articles_science_type": "Science"
 }

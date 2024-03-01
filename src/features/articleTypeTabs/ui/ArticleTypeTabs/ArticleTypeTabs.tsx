@@ -1,9 +1,11 @@
 import { memo, useCallback, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { TabItem, Tabs } from '@/shared/ui/deprecated/Tabs';
+import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
 import { useTranslation } from 'react-i18next';
 import { ArticleType } from '@/entities/Article';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Tabs } from '@/shared/ui/redesigned/Tabs';
 
 interface ArticleTypeTabsProps {
     className?: string;
@@ -18,10 +20,13 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
 
     const typeTabs = useMemo<TabItem[]>(
         () => [
-            { content: t('all_type'), value: ArticleType.ALL },
-            { content: t('business_type'), value: ArticleType.BUSINESS },
-            { content: t('it_type'), value: ArticleType.IT },
-            { content: t('science_type'), value: ArticleType.SCIENCE },
+            { content: t('articles_all_type'), value: ArticleType.ALL },
+            {
+                content: t('articles_business_type'),
+                value: ArticleType.BUSINESS,
+            },
+            { content: t('articles_it_type'), value: ArticleType.IT },
+            { content: t('articles_science_type'), value: ArticleType.SCIENCE },
         ],
         [t],
     );
@@ -34,12 +39,27 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     );
 
     return (
-        <Tabs
-            data-testid="ArticleTypeTabs"
-            tabs={typeTabs}
-            value={value}
-            onTabClick={onTabClick}
-            className={classNames('', {}, [className])}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <Tabs
+                    direction="column"
+                    data-testid="ArticleTypeTabs"
+                    tabs={typeTabs}
+                    value={value}
+                    onTabClick={onTabClick}
+                    className={classNames('', {}, [className])}
+                />
+            }
+            off={
+                <TabsDeprecated
+                    data-testid="ArticleTypeTabs"
+                    tabs={typeTabs}
+                    value={value}
+                    onTabClick={onTabClick}
+                    className={classNames('', {}, [className])}
+                />
+            }
         />
     );
 });

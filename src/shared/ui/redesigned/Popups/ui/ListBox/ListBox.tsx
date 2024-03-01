@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 
 import cls from './ListBox.module.scss';
@@ -10,24 +10,24 @@ import { DropdownDirection } from '@/shared/types/ui';
 
 import { mapDirectionClass } from '../../styles/consts';
 
-interface ListBoxItem {
-    value: string;
+interface ListBoxItem<T extends string> {
+    value: T;
     content: ReactNode;
     disabled?: boolean;
 }
 
-interface ListBoxProps {
+interface ListBoxProps<T extends string> {
     className?: string;
-    items?: ListBoxItem[];
-    value?: string;
+    items?: ListBoxItem<T>[];
+    value?: T;
     defaultValue?: string;
     label?: string;
-    onChange: (value: string) => void;
+    onChange: (value: T) => void;
     readonly?: boolean;
     direction?: DropdownDirection;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         className,
         items,
@@ -40,6 +40,9 @@ export function ListBox(props: ListBoxProps) {
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
+    const selectedItem = useMemo(() => {
+        return items?.find((item) => item.value === value);
+    }, [items, value]);
 
     return (
         <HListBox
@@ -63,7 +66,9 @@ export function ListBox(props: ListBoxProps) {
                         cls.trigger,
                     ])}
                 >
-                    <Button>{value ?? defaultValue}</Button>
+                    <Button variant="filled">
+                        {selectedItem?.content ?? defaultValue}
+                    </Button>
                 </HListBox.Button>
 
                 <HListBox.Options
@@ -83,11 +88,12 @@ export function ListBox(props: ListBoxProps) {
                                         {
                                             [popupCls.active]: active,
                                             [popupCls.disabled]: item.disabled,
+                                            [popupCls.selected]: selected,
                                         },
                                         [],
                                     )}
                                 >
-                                    {selected && '!!!'}
+                                    {selected}
                                     {item.content}
                                 </li>
                             )}

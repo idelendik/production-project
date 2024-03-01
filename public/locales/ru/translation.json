@@ -13,5 +13,11 @@
     "auth_form_title": "Форма авторизации",
     "incorrect_username_password": "Неверное имя или пароль",
     "lang": "Русский",
-    "lang_short": "RU"
+    "lang_short": "RU",
+    "sort_by": "Сортировать по:",
+    "search_input_placeholder": "Поиск",
+    "articles_all_type":  "Все статьи",
+    "articles_business_type": "Бизнесс",
+    "articles_it_type":  "Айти",
+    "articles_science_type": "Наука"
 }
