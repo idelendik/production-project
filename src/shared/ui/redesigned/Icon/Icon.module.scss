@@ -1,6 +1,12 @@
 .Icon {
     fill: var(--icon-redesigned);
     color: var(--icon-redesigned);
+
+    &.active {
+        pointer-events: none;
+        fill: var(--accent-redesigned);
+        color: var(--accent-redesigned);
+    }
 }
 
 .button {
@@ -12,7 +18,12 @@
     cursor: pointer;
 }
 
-.button:hover .Icon {
+.button:hover .Icon,
+.button.active .Icon{
     fill: var(--accent-redesigned);
     color: var(--accent-redesigned);
+}
+
+.button.active {
+    pointer-events: none;
 }
