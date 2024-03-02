@@ -85,30 +85,40 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             data-testid="ArticleListItem"
             target={target}
             to={getRouteArticleDetails(article.id)}
-            className={classNames(cls.ArticleListItem, {}, [
+            className={classNames(cls.ArticleListItemRedesigned, {}, [
                 className,
                 cls[view],
             ])}
         >
-            <Card className={cls.card}>
-                <div className={cls.imageWrapper}>
-                    <AppImage
-                        fallback={<Skeleton width={200} height={200} />}
-                        src={article.img}
-                        alt={article.title}
-                        className={cls.img}
-                    />
-                    <Text text={article.createdAt} className={cls.date} />
-                </div>
-                <div className={cls.infoWrapper}>
-                    <Text
-                        text={article.type.join(', ')}
-                        className={cls.types}
-                    />
-                    <Text text={String(article.views)} className={cls.views} />
-                    <Icon Svg={ViewsIcon} className={cls.icon} />
-                </div>
-                <Text text={article.title} className={cls.title} />
+            <Card padding={'0'} className={cls.card} border={'round'}>
+                <AppImage
+                    fallback={<Skeleton width={200} height={200} />}
+                    src={article.img}
+                    alt={article.title}
+                    className={cls.img}
+                />
+                <VStack className={cls.info} gap={'4'}>
+                    <Text text={article.title} className={cls.title} />
+                    <VStack gap={'4'} className={cls.footer} max>
+                        <HStack justify={'between'} max>
+                            <Text
+                                text={article.createdAt}
+                                className={cls.date}
+                            />
+                            <HStack gap={'8'}>
+                                <Icon Svg={ViewsIcon} />
+                                <Text
+                                    text={String(article.views)}
+                                    className={cls.views}
+                                />
+                            </HStack>
+                        </HStack>
+                    </VStack>
+                    <HStack gap={'4'}>
+                        <Avatar size={32} src={article.user.avatar} />
+                        <Text bold text={article.user.username} />
+                    </HStack>
+                </VStack>
             </Card>
         </AppLink>
     );

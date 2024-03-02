@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { HTMLAttributeAnchorTarget } from 'react';
 import { ArticleView } from '../../model/consts/consts';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListProps {
     className?: string;
@@ -54,21 +56,49 @@ export const ArticleList = (props: ArticleListProps) => {
     }
 
     return (
-        // TODO: use 'react-window' or even 'react-virtuozo' instead of react-virtualized
-        <div
-            data-testid="ArticleList"
-            className={classNames(cls.ArticleList, {}, [cls[view], className])}
-        >
-            {articles.map((article) => (
-                <ArticleListItem
-                    key={article.id}
-                    article={article}
-                    view={view}
-                    target={target}
-                    className={cls.card}
-                />
-            ))}
-            {isLoading && getSkeletons(view)}
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                // TODO: use 'react-window' or even 'react-virtuozo' instead of react-virtualized
+                <HStack
+                    wrap={'wrap'}
+                    gap={'16'}
+                    data-testid="ArticleList"
+                    className={classNames(cls.ArticleListRedesigned, {}, [])}
+                >
+                    {articles.map((article) => (
+                        <ArticleListItem
+                            key={article.id}
+                            article={article}
+                            view={view}
+                            target={target}
+                            className={cls.card}
+                        />
+                    ))}
+                    {isLoading && getSkeletons(view)}
+                </HStack>
+            }
+            off={
+                // TODO: use 'react-window' or even 'react-virtuozo' instead of react-virtualized
+                <div
+                    data-testid="ArticleList"
+                    className={classNames(cls.ArticleList, {}, [
+                        cls[view],
+                        className,
+                    ])}
+                >
+                    {articles.map((article) => (
+                        <ArticleListItem
+                            key={article.id}
+                            article={article}
+                            view={view}
+                            target={target}
+                            className={cls.card}
+                        />
+                    ))}
+                    {isLoading && getSkeletons(view)}
+                </div>
+            }
+        />
     );
 };
