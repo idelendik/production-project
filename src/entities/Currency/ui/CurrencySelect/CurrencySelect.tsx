@@ -4,7 +4,9 @@ import cls from './CurrencySelect.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Currency } from '../../model/types/currency';
 import { memo, useCallback } from 'react';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CurrencySelectProps {
     className?: string;
@@ -31,16 +33,21 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
         [onChange],
     );
 
+    const listBoxProps = {
+        className: classNames(cls.CurrencySelect, {}, [className]),
+        items: options,
+        value,
+        defaultValue: t('select_currency'),
+        label: t('your_currency'),
+        onChange: onChangeHandler,
+        readonly,
+    };
+
     return (
-        <ListBox
-            className={classNames(cls.CurrencySelect, {}, [className])}
-            items={options}
-            value={value}
-            defaultValue={t('select_currency')}
-            label={`${t('your_currency')}>`}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction="top right"
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...listBoxProps} />}
+            off={<ListBoxDeprecated {...listBoxProps} />}
         />
     );
 });

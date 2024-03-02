@@ -4,7 +4,9 @@ import cls from './CountrySelect.module.scss';
 import { memo, useCallback } from 'react';
 import { Country } from '../../model/types/country';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CountrySelectProps {
     className?: string;
@@ -32,15 +34,22 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         [onChange],
     );
 
+    const countrySelectProps = {
+        className: classNames(cls.CurrencySelect, {}, [className]),
+        items: options,
+        value,
+        defaultValue: t('select_country'),
+        label: t('your_country'),
+        onChange: onChangeHandler,
+        readonly,
+        direction: 'top right' as const,
+    };
+
     return (
-        <ListBox
-            className={classNames(cls.CurrencySelect, {}, [className])}
-            items={options}
-            value={value}
-            defaultValue={t('select_country')}
-            label={`${t('your_country')}>`}
-            onChange={onChangeHandler}
-            readonly={readonly}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...countrySelectProps} />}
+            off={<ListBoxDeprecated {...countrySelectProps} />}
         />
     );
 });
