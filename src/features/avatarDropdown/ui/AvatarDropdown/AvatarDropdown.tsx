@@ -14,7 +14,11 @@ import {
     userActions,
 } from '@/entities/User';
 import { useTranslation } from 'react-i18next';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAdmin,
+    getRouteProfile,
+    getRouteSettings,
+} from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 
 interface AvatarDropdownProps {
@@ -44,6 +48,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         ...(isAdminPanelAvailable
             ? [{ content: t('admin'), href: getRouteAdmin() }]
             : []),
+        { content: t('Settings'), href: getRouteSettings() },
         { content: t('Profile'), href: getRouteProfile(authData.id) },
         { content: t('Logout'), onClick: onLogout },
     ];
