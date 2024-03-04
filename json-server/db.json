@@ -947,6 +947,12 @@
       "articleId": "1",
       "rate": 5,
       "id": "IeIKEFC"
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "rate": 4,
+      "id": "XuxYud-"
     }
   ],
   "profile-ratings": [

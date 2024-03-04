@@ -1,7 +1,7 @@
 import { memo, Suspense, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useSelector } from 'react-redux';
@@ -14,6 +14,8 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -43,7 +45,16 @@ export const ArticleDetailsComments = memo(
 
         return (
             <VStack gap="16" max className={classNames('', {}, [className])}>
-                <Text size={TextSize.L} text={t('comments_text')} />
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={<Text size={'l'} text={t('comments_text')} />}
+                    off={
+                        <TextDeprecated
+                            size={TextSize.L}
+                            text={t('comments_text')}
+                        />
+                    }
+                />
 
                 <Suspense fallback={<Skeleton />}>
                     <AddCommentForm onSendComment={onSendComment} />

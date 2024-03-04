@@ -3,8 +3,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './StarRating.module.scss';
 
-import RatingStarIcon from '@/shared/assets/icons/rating-star-icon.svg';
-import { Icon } from '../Icon/Icon';
+import RatingStarIconDeprecated from '@/shared/assets/icons/rating-star-icon.svg';
+import RatingStarIcon from '@/shared/assets/icons/rating-star-icon-r.svg';
+import { Icon as IconDeprecated } from '../Icon/Icon';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
+import { Icon } from '../../redesigned/Icon';
 
 interface StarRatingProps {
     className?: string;
@@ -15,9 +18,6 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-/**
- * @deprecated
- */
 export const StarRating = memo((props: StarRatingProps) => {
     const { className, onSelect, size = 30, selectedStars = 0 } = props;
 
@@ -45,28 +45,56 @@ export const StarRating = memo((props: StarRatingProps) => {
     };
 
     return (
-        <div className={classNames(cls.StarRating, {}, [className])}>
-            {stars.map((starNumber) => (
-                <Icon
-                    data-testid={`StarRating.${starNumber}`}
-                    data-selected={currentStarsCount >= starNumber}
-                    className={classNames(
+        <div
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.StarRating,
+                    off: () => cls.StarRatingRedesigned,
+                }),
+                {},
+                [className],
+            )}
+        >
+            {stars.map((starNumber, idx) => {
+                const commonProps = {
+                    'data-testid': `StarRating.${starNumber}`,
+                    'data-selected': currentStarsCount >= starNumber,
+                    className: classNames(
                         cls.starIcon,
                         {
                             [cls.selected]: isSelected,
                             [cls.hovered]: currentStarsCount >= starNumber,
                         },
                         [],
-                    )}
-                    key={starNumber}
-                    Svg={RatingStarIcon}
-                    width={size}
-                    height={size}
-                    onMouseLeave={onLeave}
-                    onMouseEnter={onHover(starNumber)}
-                    onClick={onClick(starNumber)}
-                />
-            ))}
+                    ),
+                    key: starNumber,
+                    width: size,
+                    height: size,
+                    onMouseLeave: onLeave,
+                    onMouseEnter: onHover(starNumber),
+                    onClick: onClick(starNumber),
+                };
+                return (
+                    <ToggleFeatures
+                        key={idx}
+                        feature="isAppRedesigned"
+                        on={
+                            <Icon
+                                clickable={!isSelected}
+                                Svg={RatingStarIcon}
+                                {...commonProps}
+                            />
+                        }
+                        off={
+                            <IconDeprecated
+                                Svg={RatingStarIconDeprecated}
+                                {...commonProps}
+                            />
+                        }
+                    />
+                );
+            })}
         </div>
     );
 });
