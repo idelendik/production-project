@@ -19,5 +19,7 @@
     "articles_all_type":  "All articles",
     "articles_business_type": "Business",
     "articles_it_type":  "IT",
-    "articles_science_type": "Science"
+    "articles_science_type": "Science",
+    "article_views_amount_one": "{{count}} view",
+    "article_views_amount_other": "{{count}} views"
 }

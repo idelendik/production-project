@@ -19,5 +19,10 @@
     "articles_all_type":  "Все статьи",
     "articles_business_type": "Бизнесс",
     "articles_it_type":  "Айти",
-    "articles_science_type": "Наука"
+    "articles_science_type": "Наука",
+    "article_views_amount_zero": "{{count}} просмотров",
+    "article_views_amount_one": "{{count}} просмотр",
+    "article_views_amount_two": "{{count}} просмотра",
+    "article_views_amount_few": "{{count}} просмотра",
+    "article_views_amount_many": "{{count}} просмотров"
 }
