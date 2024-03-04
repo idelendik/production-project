@@ -9,6 +9,7 @@ import { Overlay } from '../../redesigned/Overlay/Overlay';
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 
 import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
     className?: string;
@@ -79,12 +80,17 @@ const DrawerContent = memo((props: DrawerProps) => {
     const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.Drawer, {}, [
                     className,
                     theme,
                     'app_drawer',
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.drawerNew,
+                        off: () => cls.drawerOld,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />
@@ -113,9 +119,6 @@ const DrawerAsync = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
-/**
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => {
     return (
         <AnimationProvider>

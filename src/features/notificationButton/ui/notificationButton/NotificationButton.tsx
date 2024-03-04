@@ -6,7 +6,7 @@ import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import NotificationsIcon from '@/shared/assets/icons/notifications-icon-r.svg';
 import { NotificationList } from '@/entities/Notification';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 
 import { BrowserView, MobileView } from 'react-device-detect';
 import { ToggleFeatures } from '@/shared/lib/features';
