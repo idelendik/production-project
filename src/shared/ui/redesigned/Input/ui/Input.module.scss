@@ -51,11 +51,10 @@ input {
     .addonLeft svg,
     .addonRight svg {
         color: var(--accent-redesigned);
-        fill: var(--accent-redesigned)
+        fill: var(--accent-redesigned);
     }
 }
 
 .readonly {
     opacity: 0.7;
 }
-

@@ -5,6 +5,7 @@ import { ProfileCard } from './ProfileCard';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/tests/Avatar.jpg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/ProfileCard',
@@ -31,6 +32,21 @@ Primary.args = {
         currency: Currency.CNY,
     },
 };
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = {
+    data: {
+        username: 'admin',
+        age: 30,
+        country: Country.India,
+        lastname: 'D.',
+        firstname: 'Igor',
+        city: 'Minsk',
+        avatar: AvatarImg,
+        currency: Currency.CNY,
+    },
+};
+PrimaryRedesigned.decorators = [NewDesignDecorator];
 
 export const PrimaryWithError = Template.bind({});
 PrimaryWithError.args = {

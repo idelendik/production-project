@@ -38,9 +38,9 @@ module.exports = {
             '@': paths.src,
         };
 
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         config!.module!.rules = config!.module!.rules!.map(
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             (rule: RuleSetRule) => {
                 if (/svg/.test(rule.test as string)) {
                     return { ...rule, exclude: /\.svg$/i };
