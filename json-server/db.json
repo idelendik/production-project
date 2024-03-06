@@ -846,7 +846,7 @@
         "ADMIN"
       ],
       "features": {
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "isArticlesPageWasOpened": true,
